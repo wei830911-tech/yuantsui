@@ -6,54 +6,21 @@
 <title>圓淬空間美學 YUANTSUI Design</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Noto+Serif+TC:wght@200;300;400&family=Noto+Sans+TC:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
-/* ── TOKENS ── */
 :root{
-  --w:    #F8F6F2;        /* 暖米白背景 */
-  --off:  #F1EDE6;        /* 淺駝色 */
-  --warm: #EAE4DA;        /* 暖駝 */
-  --ink:  #2A2220;        /* 深咖啡主色 */
-  --mid:  #574A3E;        /* 中咖啡 */
-  --dim:  #968E84;        /* 淺咖啡 */
-  --gold: #8A6E4C;        /* 棕金點綴 */
-  --line: rgba(44,32,24,.1);
-  --line2:rgba(44,32,24,.05);
+  --w:#F8F6F2;--off:#F1EDE6;--warm:#EAE4DA;--ink:#2A2220;--mid:#574A3E;--dim:#968E84;--gold:#8A6E4C;
+  --line:rgba(44,32,24,.1);--line2:rgba(44,32,24,.05);
 }
-
-/* ── RESET ── */
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  font-family:'Noto Sans TC',sans-serif;
-  background:var(--w);color:var(--ink);
-  overflow-x:hidden;cursor:none;
-  font-weight:300;letter-spacing:.2px;
-}
-/* paper grain */
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.028'/%3E%3C/svg%3E");
-}
-
-/* ── CURSOR ── */
+body{font-family:'Noto Sans TC',sans-serif;background:var(--w);color:var(--ink);overflow-x:hidden;cursor:none;font-weight:300;letter-spacing:.2px;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.028'/%3E%3C/svg%3E");}
 .cur{width:4px;height:4px;background:var(--ink);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s;}
 .cur-r{width:22px;height:22px;border:1px solid var(--ink);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .45s cubic-bezier(.23,1,.32,1);opacity:.15;}
-body:hover .cur-r{opacity:.15}
 @media(max-width:768px){.cur,.cur-r{display:none}body{cursor:auto}}
 
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:0 60px;height:68px;
-  background:rgba(250,247,242,.97);backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--line);
-}
-.logo{
-  font-family:'Playfair Display',serif;
-  font-size:14px;font-weight:400;font-style:normal;
-  letter-spacing:9px;text-transform:uppercase;
-  color:var(--ink);text-decoration:none;
-}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:68px;background:rgba(250,247,242,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);}
+.logo{font-family:'Playfair Display',serif;font-size:14px;font-weight:400;letter-spacing:9px;text-transform:uppercase;color:var(--ink);text-decoration:none;}
 .nav-r{display:flex;align-items:center;gap:44px}
 .nav-links{display:flex;gap:36px;list-style:none}
 .nav-links a{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .2s;}
@@ -62,315 +29,138 @@ nav{
 .nav-cta:hover{background:var(--ink);color:var(--w)}
 @media(max-width:768px){nav{padding:0 24px}.nav-links{display:none}}
 
-/* ── HERO — Full viewport, editorial ── */
-.hero{
-  height:100vh;min-height:700px;
-  position:relative;overflow:hidden;
-  display:flex;align-items:flex-end;
-  padding-top:68px;
-}
-/* dark right panel — 42% width */
-.hero-panel{
-  position:absolute;
-  top:0;right:0;bottom:0;
-  width:42%;
-  background:#1C1612;
-  z-index:0;
-}
-/* subtle texture on dark panel */
-.hero-panel::after{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 80% at 60% 40%, rgba(148,118,88,.12) 0%, transparent 70%);
-}
-
-/* year watermark on dark panel */
-.hero-panel-year{
-  position:absolute;
-  bottom:-20px;right:-10px;
-  font-family:'Playfair Display',serif;
-  font-size:clamp(120px,14vw,200px);
-  font-weight:400;font-style:normal;
-  letter-spacing:-8px;
-  color:rgba(255,255,255,.04);
-  line-height:1;user-select:none;pointer-events:none;
-}
-
-/* hero content layer */
-.hero-content{
-  position:relative;z-index:2;
-  width:100%;
-  padding:0 60px 72px;
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-}
+/* HERO */
+.hero{height:100vh;min-height:700px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding-top:68px;}
+.hero-panel{position:absolute;top:0;right:0;bottom:0;width:42%;background:#1C1612;z-index:0;}
+.hero-panel::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 60% 40%,rgba(148,118,88,.12) 0%,transparent 70%);}
+.hero-panel-year{position:absolute;bottom:-20px;right:-10px;font-family:'Playfair Display',serif;font-size:clamp(120px,14vw,200px);font-weight:400;letter-spacing:-8px;color:rgba(255,255,255,.04);line-height:1;user-select:none;pointer-events:none;}
+.hero-content{position:relative;z-index:2;width:100%;padding:0 60px 72px;display:flex;justify-content:space-between;align-items:flex-end;}
 .hero-left{max-width:520px;}
-
-.hero-tag{
-  font-size:8px;letter-spacing:5px;text-transform:uppercase;
-  color:var(--gold);margin-bottom:32px;
-  display:flex;align-items:center;gap:14px;
-  opacity:0;animation:rise .9s .1s forwards;
-}
+.hero-tag{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:32px;display:flex;align-items:center;gap:14px;opacity:0;animation:rise .9s .1s forwards;}
 .hero-tag::before{content:'';width:28px;height:1px;background:var(--gold);}
-
-.hero-h1{
-  font-family:'Playfair Display','Noto Serif TC',serif;
-  font-size:clamp(58px,6.5vw,104px);
-  font-weight:400;font-style:normal;
-  line-height:1.0;letter-spacing:1px;
-  color:var(--ink);
-  opacity:0;animation:rise .9s .25s forwards;
-}
-.hero-h1 .br{display:block}
-.hero-h1 .gold{color:var(--gold)}
-
-.hero-sub{
-  margin-top:28px;
-  font-size:11px;line-height:2.4;color:var(--dim);
-  max-width:340px;
-  opacity:0;animation:rise .9s .45s forwards;
-}
-
-.hero-btns{
-  margin-top:44px;display:flex;gap:18px;align-items:center;
-  opacity:0;animation:rise .9s .6s forwards;
-}
-.btn-dark{background:var(--ink);color:var(--w);padding:13px 38px;font-size:8px;letter-spacing:4px;text-transform:uppercase;text-decoration:none;transition:background .25s;font-family:'Noto Sans TC',sans-serif;}
+.hero-h1{font-family:'Playfair Display','Noto Serif TC',serif;font-size:clamp(58px,6.5vw,104px);font-weight:400;line-height:1.0;letter-spacing:1px;color:var(--ink);opacity:0;animation:rise .9s .25s forwards;}
+.hero-h1 .br{display:block}.hero-h1 .gold{color:var(--gold)}
+.hero-sub{margin-top:28px;font-size:11px;line-height:2.4;color:var(--dim);max-width:340px;opacity:0;animation:rise .9s .45s forwards;}
+.hero-btns{margin-top:44px;display:flex;gap:18px;align-items:center;opacity:0;animation:rise .9s .6s forwards;}
+.btn-dark{background:var(--ink);color:var(--w);padding:13px 38px;font-size:8px;letter-spacing:4px;text-transform:uppercase;text-decoration:none;transition:background .25s;}
 .btn-dark:hover{background:var(--gold)}
-.btn-txt{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:all .25s;font-family:'Noto Sans TC',sans-serif;}
+.btn-txt{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:all .25s;}
 .btn-txt:hover{color:var(--gold);border-color:var(--gold)}
-
-/* right side — stats float on dark panel */
-.hero-right{
-  display:flex;flex-direction:column;gap:0;
-  margin-bottom:4px;
-  opacity:0;animation:rise .9s .7s forwards;
-}
-.hero-stat{
-  padding:20px 0;
-  border-top:1px solid rgba(255,255,255,.12);
-  min-width:180px;
-}
+.hero-right{display:flex;flex-direction:column;gap:0;margin-bottom:4px;opacity:0;animation:rise .9s .7s forwards;}
+.hero-stat{padding:20px 0;border-top:1px solid rgba(255,255,255,.12);min-width:180px;}
 .hero-stat:last-child{border-bottom:1px solid rgba(255,255,255,.12)}
-.hs-n{
-  font-family:'Playfair Display',serif;
-  font-size:34px;font-weight:400;font-style:normal;
-  color:rgba(255,255,255,.85);line-height:1;
-  display:block;margin-bottom:6px;
-}
+.hs-n{font-family:'Playfair Display',serif;font-size:34px;font-weight:400;color:rgba(255,255,255,.85);line-height:1;display:block;margin-bottom:6px;}
 .hs-l{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.35)}
-
-/* scroll cue */
-.hero-scroll{
-  position:absolute;bottom:32px;left:60px;z-index:3;
-  display:flex;align-items:center;gap:12px;
-  font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);
-  opacity:0;animation:rise 1s 1.2s forwards;
-}
+.hero-scroll{position:absolute;bottom:32px;left:60px;z-index:3;display:flex;align-items:center;gap:12px;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);opacity:0;animation:rise 1s 1.2s forwards;}
 .scroll-line{width:40px;height:1px;background:var(--dim);position:relative;overflow:hidden;}
 .scroll-line::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--gold);animation:scanline 2s 1.5s infinite;}
 @keyframes scanline{0%{left:-100%}100%{left:100%}}
+@media(max-width:768px){.hero-panel{width:100%;opacity:.6}.hero-content{flex-direction:column;padding:0 24px 56px;gap:40px}.hero-right{flex-direction:row}.hero-stat{flex:1;border-right:1px solid rgba(255,255,255,.12)}.hero-stat:last-child{border-right:none}.hero-scroll{left:24px}}
 
-@media(max-width:768px){
-  .hero-panel{width:100%;opacity:.6}
-  .hero-content{flex-direction:column;padding:0 24px 56px;gap:40px}
-  .hero-right{flex-direction:row;gap:0}
-  .hero-stat{flex:1;border-top:1px solid rgba(255,255,255,.12);border-right:1px solid rgba(255,255,255,.12)}
-  .hero-stat:last-child{border-right:none}
-  .hero-scroll{left:24px}
-}
-
-/* ── INTRO STRIP — thin editorial band ── */
-.intro-strip{
-  display:flex;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  overflow-x:auto;
-}
-.intro-strip-item{
-  flex:1;min-width:0;padding:20px 28px;
-  border-right:1px solid var(--line);
-  display:flex;align-items:center;gap:10px;
-  white-space:nowrap;
-}
+/* INTRO STRIP */
+.intro-strip{display:flex;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow-x:auto;}
+.intro-strip-item{flex:1;min-width:0;padding:20px 28px;border-right:1px solid var(--line);display:flex;align-items:center;gap:10px;white-space:nowrap;}
 .intro-strip-item:last-child{border-right:none}
 .is-num{font-family:'Playfair Display',serif;font-size:10px;color:var(--gold);font-weight:400;flex-shrink:0}
-.is-txt{font-size:9px;letter-spacing:1px;color:var(--mid);white-space:nowrap}
+.is-txt{font-size:9px;letter-spacing:1px;color:var(--mid);}
 @media(max-width:768px){.intro-strip{flex-wrap:wrap}.intro-strip-item{flex:1 0 50%;border-bottom:1px solid var(--line)}}
 
-/* ── ABOUT — asymmetric editorial ── */
-.about{
-  display:grid;
-  grid-template-columns:55fr 45fr;
-  min-height:80vh;
-  border-bottom:1px solid var(--line);
-}
-.about-l{
-  padding:110px 80px 110px 60px;
-  display:flex;flex-direction:column;justify-content:center;
-  border-right:1px solid var(--line);
-}
-.about-r{
-  background:var(--off);
-  display:flex;flex-direction:column;
-  justify-content:space-between;
-  padding:60px 52px;
-  position:relative;overflow:hidden;
-}
-.about-r-deco{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(140px,16vw,220px);
-  font-weight:400;font-style:normal;
-  color:rgba(25,24,22,.05);
-  line-height:1;letter-spacing:-6px;
-  align-self:flex-end;
-  margin-top:auto;
-  user-select:none;
-}
+/* ABOUT */
+.about{display:grid;grid-template-columns:55fr 45fr;min-height:80vh;border-bottom:1px solid var(--line);}
+.about-l{padding:110px 80px 110px 60px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line);}
+.about-r{background:var(--off);display:flex;flex-direction:column;justify-content:space-between;padding:60px 52px;position:relative;overflow:hidden;}
 .about-r-top{display:flex;flex-direction:column;gap:0}
-.about-r-tag{
-  font-size:8px;letter-spacing:5px;text-transform:uppercase;
-  color:var(--gold);margin-bottom:16px;
-}
-.about-r-quote{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(20px,2vw,28px);
-  font-weight:400;font-style:normal;
-  line-height:1.5;letter-spacing:.5px;
-  color:var(--mid);
-  border-left:2px solid var(--gold);
-  padding-left:24px;
-}
-
+.about-r-tag{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.about-r-quote{font-family:'Playfair Display',serif;font-size:clamp(20px,2vw,28px);font-weight:400;line-height:1.5;letter-spacing:.5px;color:var(--mid);border-left:2px solid var(--gold);padding-left:24px;}
 .sec-tag{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:14px;}
 .sec-tag::before{content:'';width:20px;height:1px;background:var(--gold);}
-.sec-h{
-  font-family:'Playfair Display','Noto Serif TC',serif;
-  font-size:clamp(36px,3.5vw,56px);
-  font-weight:400;font-style:normal;
-  line-height:1.1;letter-spacing:1px;margin-bottom:32px;
-}
+.sec-h{font-family:'Playfair Display','Noto Serif TC',serif;font-size:clamp(36px,3.5vw,56px);font-weight:400;line-height:1.1;letter-spacing:1px;margin-bottom:32px;}
 .sec-h .g{color:var(--gold)}
 .body-t{font-size:12px;line-height:2.6;color:var(--dim);margin-bottom:14px;max-width:480px}
-
-.about-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  margin-top:52px;border-top:1px solid var(--line);
-}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:52px;border-top:1px solid var(--line);}
 .ag-item{padding:28px 0;border-bottom:1px solid var(--line);}
 .ag-item:nth-child(odd){padding-right:32px}
 .ag-item:nth-child(even){padding-left:32px;border-left:1px solid var(--line)}
 .ag-n{font-size:8px;letter-spacing:3px;color:var(--gold);margin-bottom:8px;display:block}
 .ag-t{font-size:12px;color:var(--ink);margin-bottom:5px;letter-spacing:.3px}
 .ag-d{font-size:11px;color:var(--dim);line-height:2}
-
 @media(max-width:768px){.about{grid-template-columns:1fr}.about-r{min-height:320px}.about-l{padding:60px 24px}}
 
-/* ── SERVICES ── */
+/* SERVICES */
 .services{border-bottom:1px solid var(--line)}
-.srv-head{
-  padding:80px 60px 56px;
-  display:grid;grid-template-columns:1fr 1fr;gap:60px;
-  align-items:end;border-bottom:1px solid var(--line);
-}
+.srv-head{padding:80px 60px 56px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;border-bottom:1px solid var(--line);}
 .srv-list{display:flex;flex-direction:column}
-.srv-row{
-  display:grid;grid-template-columns:64px 1fr 1fr auto;
-  align-items:start;
-  padding:36px 60px;
-  border-bottom:1px solid var(--line);
-  transition:background .3s;cursor:pointer;gap:32px;
-}
+.srv-row{display:grid;grid-template-columns:64px 1fr 1fr auto;align-items:start;padding:36px 60px;border-bottom:1px solid var(--line);transition:background .3s;cursor:pointer;gap:32px;}
 .srv-row:hover{background:var(--off)}
 .srv-row:hover .sr-more{opacity:1;transform:translateX(0)}
 .sr-n{font-family:'Playfair Display',serif;font-size:12px;color:var(--dim);font-weight:400;padding-top:4px}
-.sr-title{font-family:'Playfair Display','Noto Serif TC',serif;font-size:22px;font-weight:400;font-style:normal;letter-spacing:.5px;line-height:1.2}
+.sr-title{font-family:'Playfair Display','Noto Serif TC',serif;font-size:22px;font-weight:400;letter-spacing:.5px;line-height:1.2}
 .sr-desc{font-size:11px;color:var(--dim);line-height:2.2;padding-top:4px}
 .sr-more{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateX(-8px);transition:all .3s;padding-top:6px;white-space:nowrap}
 @media(max-width:768px){.srv-head{grid-template-columns:1fr;padding:48px 24px;gap:20px}.srv-row{grid-template-columns:40px 1fr;padding:28px 24px;gap:16px}.sr-desc,.sr-more{display:none}}
 
-/* ── PORTFOLIO ── */
+/* PORTFOLIO */
 .portfolio{border-bottom:1px solid var(--line)}
-.pf-head{
-  padding:80px 60px 56px;
-  display:flex;justify-content:space-between;align-items:flex-end;
-  border-bottom:1px solid var(--line);
-}
-.pf-grid{
-  display:grid;
-  grid-template-columns:3fr 2fr 2fr;
-  grid-template-rows:460px 320px;
-}
+.pf-head{padding:80px 60px 56px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--line);}
+
+/* Desktop grid */
+.pf-grid{display:grid;grid-template-columns:3fr 2fr 2fr;grid-template-rows:460px 320px;}
 .pj{position:relative;overflow:hidden;cursor:pointer;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
 .pj:nth-child(1){grid-column:1;grid-row:1/3}
 .pj:nth-child(2){grid-column:2;grid-row:1}
 .pj:nth-child(3){grid-column:3;grid-row:1;border-right:none}
 .pj:nth-child(4){grid-column:2;grid-row:2;border-bottom:none}
 .pj:nth-child(5){grid-column:3;grid-row:2;border-right:none;border-bottom:none}
-
-.pj-bg{position:absolute;inset:0;transition:transform .6s cubic-bezier(.23,1,.32,1);}
-.pj:hover .pj-bg{transform:scale(1.02)}
-
-.pj-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(18,16,12,.55) 0%,transparent 45%);}
-
-.pj-info{position:absolute;bottom:0;left:0;right:0;padding:32px 36px;z-index:2;transform:translateY(8px);transition:transform .4s,opacity .4s;opacity:0}
+.pj-bg{position:absolute;inset:0;background-size:cover;transition:transform .6s cubic-bezier(.23,1,.32,1);}
+.pj:hover .pj-bg{transform:scale(1.03)}
+.pj-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(18,16,12,.6) 0%,transparent 50%);}
+.pj-info{position:absolute;bottom:0;left:0;right:0;padding:28px 32px;z-index:2;transform:translateY(6px);transition:transform .4s,opacity .4s;opacity:0}
 .pj:hover .pj-info{transform:translateY(0);opacity:1}
-.pj-cat{font-size:7px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:6px}
-.pj-name{font-family:'Playfair Display',serif;font-size:clamp(18px,1.8vw,24px);font-weight:400;font-style:normal;color:#fff;letter-spacing:.5px;margin-bottom:4px}
+.pj-cat{font-size:7px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:5px}
+.pj-name{font-family:'Playfair Display',serif;font-size:clamp(16px,1.6vw,22px);font-weight:400;color:#fff;letter-spacing:.5px;margin-bottom:4px}
 .pj-yr{font-size:9px;color:rgba(255,255,255,.35);letter-spacing:1.5px}
 
+/* Mobile: single column scroll */
 @media(max-width:768px){
-  .pf-grid{grid-template-columns:1fr;grid-template-rows:auto}
-  .pj{height:62vw;grid-column:auto!important;grid-row:auto!important;border-right:none}
+  .pf-grid{display:flex;flex-direction:column;gap:0}
+  .pj{height:72vw;border-right:none;border-bottom:1px solid var(--line)}
+  .pj:last-child{border-bottom:none}
+  .pj-info{opacity:1;transform:translateY(0);padding:18px 20px}
   .pf-head{padding:48px 24px;flex-direction:column;gap:20px;align-items:flex-start}
-  .pj-info{padding:20px 24px}
-  .pj-name{font-size:18px}
 }
 
-/* ── PROCESS ── */
+/* Project header */
+.proj-header{padding:40px 60px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline}
+@media(max-width:768px){.proj-header{padding:28px 24px 16px;flex-direction:column;gap:6px}}
+
+/* PROCESS */
 .process{border-bottom:1px solid var(--line)}
-.pr-head{
-  padding:80px 60px 56px;
-  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;
-  border-bottom:1px solid var(--line);
-}
-.pr-timeline{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  position:relative;
-}
-.pr-timeline::before{
-  content:'';position:absolute;
-  top:28px;left:calc(12.5%);right:calc(12.5%);
-  height:1px;background:var(--line);
-}
+.pr-head{padding:80px 60px 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;border-bottom:1px solid var(--line);}
+.pr-timeline{display:grid;grid-template-columns:repeat(4,1fr);position:relative;}
+.pr-timeline::before{content:'';position:absolute;top:28px;left:calc(12.5%);right:calc(12.5%);height:1px;background:var(--line);}
 .pr-step{padding:56px 40px 52px;border-right:1px solid var(--line);position:relative}
 .pr-step:last-child{border-right:none}
-.pr-dot{
-  width:9px;height:9px;border-radius:50%;
-  border:1px solid var(--gold);background:var(--w);
-  margin-bottom:32px;position:relative;z-index:1;
-}
+.pr-dot{width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);background:var(--w);margin-bottom:32px;position:relative;z-index:1;}
 .pr-num{font-size:7px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block}
-.pr-title{font-family:'Playfair Display','Noto Serif TC',serif;font-size:20px;font-weight:400;font-style:normal;letter-spacing:.5px;margin-bottom:12px}
+.pr-title{font-family:'Playfair Display','Noto Serif TC',serif;font-size:20px;font-weight:400;letter-spacing:.5px;margin-bottom:12px}
 .pr-desc{font-size:11px;color:var(--dim);line-height:2.3}
 @media(max-width:768px){.pr-timeline{grid-template-columns:1fr 1fr}.pr-step{border-bottom:1px solid var(--line)}.pr-head{grid-template-columns:1fr;padding:48px 24px;gap:20px}.pr-timeline::before{display:none}}
 
-/* ── TESTIMONIALS ── */
+/* PHILOSOPHY */
 .testimonials{border-bottom:1px solid var(--line)}
 .ts-head{padding:80px 60px 56px;border-bottom:1px solid var(--line)}
 .ts-grid{display:grid;grid-template-columns:repeat(3,1fr)}
 .ts-card{padding:56px 52px;border-right:1px solid var(--line);transition:background .3s}
 .ts-card:last-child{border-right:none}
 .ts-card:hover{background:var(--off)}
-.ts-q{font-family:'Playfair Display',serif;font-size:13px;letter-spacing:4px;font-weight:400;color:var(--gold);line-height:1;margin-bottom:28px;opacity:.7;display:block;border:1px solid rgba(140,110,76,.25);width:40px;height:40px;display:flex;align-items:center;justify-content:center;}
-.ts-body{font-family:'Playfair Display','Noto Serif TC',serif;font-size:16px;font-weight:400;font-style:normal;line-height:2;color:var(--mid);margin-bottom:36px;letter-spacing:.3px}
+.ts-q{font-family:'Playfair Display',serif;font-size:13px;letter-spacing:4px;font-weight:400;color:var(--gold);margin-bottom:28px;opacity:.7;border:1px solid rgba(140,110,76,.25);width:40px;height:40px;display:flex;align-items:center;justify-content:center;}
+.ts-body{font-family:'Playfair Display','Noto Serif TC',serif;font-size:16px;font-weight:400;line-height:2;color:var(--mid);margin-bottom:36px;letter-spacing:.3px}
 .ts-rule{width:24px;height:1px;background:var(--gold);margin-bottom:20px}
 .ts-name{font-size:11px;letter-spacing:1px;color:var(--ink);margin-bottom:4px}
 .ts-role{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--dim)}
 @media(max-width:768px){.ts-grid{grid-template-columns:1fr}.ts-card{border-right:none;border-bottom:1px solid var(--line)}.ts-head{padding:48px 24px}}
 
-/* ── CONTACT ── */
+/* CONTACT */
 .contact{border-bottom:1px solid var(--line)}
 .ct-wrap{display:grid;grid-template-columns:1fr 1fr}
 .ct-l{padding:100px 80px 100px 60px;border-right:1px solid var(--line)}
@@ -382,7 +172,6 @@ nav{
 .ct-ico{color:var(--gold);font-size:12px;width:16px;flex-shrink:0;margin-top:3px}
 .ct-d small{display:block;font-size:7px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
 .ct-d span{font-size:12px;color:var(--mid)}
-
 .form{display:flex;flex-direction:column;gap:0}
 .frow{display:grid;grid-template-columns:1fr 1fr}
 .ff{position:relative;border:1px solid var(--line);margin:-1px -1px 0 0;background:var(--w);transition:border-color .2s}
@@ -394,14 +183,10 @@ nav{
 .fsub:hover{background:var(--gold)}
 @media(max-width:768px){.ct-wrap{grid-template-columns:1fr}.ct-l,.ct-r{padding:60px 24px}.frow{grid-template-columns:1fr}}
 
-/* ── FOOTER ── */
-footer{
-  padding:48px 60px;
-  display:grid;grid-template-columns:1fr auto 1fr;
-  align-items:center;
-}
+/* FOOTER */
+footer{padding:48px 60px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;}
 .ft-l{display:flex;flex-direction:column;gap:4px}
-.ft-logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:400;font-style:normal;letter-spacing:7px;text-transform:uppercase;color:var(--ink)}
+.ft-logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:400;letter-spacing:7px;text-transform:uppercase;color:var(--ink)}
 .ft-sub{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--dim)}
 .ft-nav{display:flex;gap:32px;list-style:none}
 .ft-nav a{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .2s}
@@ -409,21 +194,43 @@ footer{
 .ft-copy{font-size:8px;color:var(--dim);letter-spacing:1px;text-align:right}
 @media(max-width:768px){footer{grid-template-columns:1fr;text-align:center;padding:36px 24px;gap:20px}.ft-copy{text-align:center}.ft-nav{flex-wrap:wrap;justify-content:center}}
 
-/* ── SHARED ── */
-.btn-ln{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:all .25s;font-family:'Noto Sans TC',sans-serif}
+/* SHARED */
+.btn-ln{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:all .25s;}
 .btn-ln:hover{color:var(--gold);border-color:var(--gold)}
 
-/* ── ANIMATION ── */
+/* ANIMATIONS */
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
 .rv.on{opacity:1;transform:translateY(0)}
 .rv2{opacity:0;transform:translateY(22px);transition:opacity .8s .15s ease,transform .8s .15s ease}
 .rv2.on{opacity:1;transform:translateY(0)}
+
+/* ── LIGHTBOX ── */
+.lb{display:none;position:fixed;inset:0;z-index:99999;background:rgba(10,8,6,.95);align-items:center;justify-content:center;flex-direction:column;}
+.lb.open{display:flex}
+.lb-img{max-width:92vw;max-height:88vh;object-fit:contain;border:none;display:block;}
+.lb-close{position:absolute;top:20px;right:28px;font-size:28px;color:rgba(255,255,255,.6);cursor:pointer;line-height:1;background:none;border:none;transition:color .2s;}
+.lb-close:hover{color:#fff}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);font-size:22px;color:rgba(255,255,255,.5);cursor:pointer;background:none;border:none;padding:16px 20px;transition:color .2s;user-select:none;}
+.lb-prev:hover,.lb-next:hover{color:#fff}
+.lb-prev{left:10px}.lb-next{right:10px}
+.lb-caption{margin-top:14px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.35);}
+.lb-counter{position:absolute;top:24px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.3);}
 </style>
 </head>
 <body>
 <div class="cur" id="c"></div>
 <div class="cur-r" id="cr"></div>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="lb-close" id="lb-close">✕</button>
+  <div class="lb-counter" id="lb-counter"></div>
+  <button class="lb-prev" id="lb-prev">&#8592;</button>
+  <img class="lb-img" id="lb-img" src="" alt="">
+  <button class="lb-next" id="lb-next">&#8594;</button>
+  <div class="lb-caption" id="lb-caption"></div>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -441,7 +248,7 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-panel" style="background-image:url(hero-bg.jpg);background-size:cover;background-position:center;">
+  <div class="hero-panel" style="background-image:url(hero-bg.jpg);background-size:cover;background-position:center 40%;">
     <div style="position:absolute;inset:0;background:rgba(20,14,8,0.45)"></div>
     <div class="hero-panel-year">2022</div>
   </div>
@@ -453,70 +260,35 @@ footer{
         <span class="br gold">The Art of</span>
         <span class="br">Living Space</span>
       </h1>
-      <p class="hero-sub">
-        每個空間都是一個故事。<br>
-        我們以精緻工藝與深刻的美學視野，<br>
-        為您打造一個真正屬於自己的生活場域。
-      </p>
+      <p class="hero-sub">每個空間都是一個故事。<br>我們以精緻工藝與深刻的美學視野，<br>為您打造一個真正屬於自己的生活場域。</p>
       <div class="hero-btns">
         <a href="#portfolio" class="btn-dark">瀏覽作品</a>
         <a href="#contact" class="btn-txt">免費諮詢</a>
       </div>
     </div>
     <div class="hero-right">
-      <div class="hero-stat">
-        <span class="hs-n">10+</span>
-        <span class="hs-l">年業界經驗</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hs-n">20+</span>
-        <span class="hs-l">完成案例</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hs-n" style="font-size:clamp(18px,2vw,26px);letter-spacing:2px">By Appt.</span>
-        <span class="hs-l">預約洽談制</span>
-      </div>
+      <div class="hero-stat"><span class="hs-n">10+</span><span class="hs-l">年業界經驗</span></div>
+      <div class="hero-stat"><span class="hs-n">20+</span><span class="hs-l">完成案例</span></div>
+      <div class="hero-stat"><span class="hs-n" style="font-size:clamp(18px,2vw,26px);letter-spacing:2px">By Appt.</span><span class="hs-l">預約洽談制</span></div>
     </div>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    向下探索
-  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div>向下探索</div>
 </section>
 
 <!-- INTRO STRIP -->
 <div class="intro-strip">
-  <div class="intro-strip-item">
-    <span class="is-num">I</span>
-    <span class="is-txt">住宅 · 商業 · 軟裝搭配</span>
-  </div>
-  <div class="intro-strip-item">
-    <span class="is-num">II</span>
-    <span class="is-txt">深耕台中 · 服務全台</span>
-  </div>
-  <div class="intro-strip-item">
-    <span class="is-num">III</span>
-    <span class="is-txt">By Appointment Only</span>
-  </div>
+  <div class="intro-strip-item"><span class="is-num">I</span><span class="is-txt">住宅 · 商業 · 軟裝搭配</span></div>
+  <div class="intro-strip-item"><span class="is-num">II</span><span class="is-txt">深耕台中 · 服務全台</span></div>
+  <div class="intro-strip-item"><span class="is-num">III</span><span class="is-txt">By Appointment Only</span></div>
 </div>
 
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-l rv">
     <div class="sec-tag">關於圓淬</div>
-    <h2 class="sec-h">
-      美，存在於<br>每一個<span class="g">細節</span>
-    </h2>
-    <p class="body-t">
-      圓淬空間美學成立於 2022 年，專注於高端住宅與商業空間設計。
-      我們相信，真正奢華的空間不僅僅是視覺上的震撼，
-      而是每一個觸摸到的材質、每一道落下的光線，
-      都能讓人感受到生活的溫度。
-    </p>
-    <p class="body-t">
-      深耕台中在地，融合東方美學與現代主義，
-      為每位業主量身打造獨一無二的空間語言。
-    </p>
+    <h2 class="sec-h">美，存在於<br>每一個<span class="g">細節</span></h2>
+    <p class="body-t">圓淬空間美學成立於 2022 年，專注於高端住宅與商業空間設計。我們相信，真正奢華的空間不僅僅是視覺上的震撼，而是每一個觸摸到的材質、每一道落下的光線，都能讓人感受到生活的溫度。</p>
+    <p class="body-t">深耕台中在地，融合東方美學與現代主義，為每位業主量身打造獨一無二的空間語言。</p>
     <div class="about-grid">
       <div class="ag-item"><span class="ag-n">01</span><div class="ag-t">以人為本</div><div class="ag-d">深入了解業主的生活習慣，設計真正符合生活的空間。</div></div>
       <div class="ag-item"><span class="ag-n">02</span><div class="ag-t">材質與光</div><div class="ag-d">精選建材，搭配專業燈光，創造空間層次與溫度。</div></div>
@@ -527,11 +299,7 @@ footer{
   <div class="about-r rv2">
     <div class="about-r-top">
       <div class="about-r-tag">設計哲學</div>
-      <div class="about-r-quote">
-        空間是無聲的語言，<br>
-        訴說著一個人<br>
-        選擇生活的方式。
-      </div>
+      <div class="about-r-quote">空間是無聲的語言，<br>訴說著一個人<br>選擇生活的方式。</div>
     </div>
   </div>
 </section>
@@ -539,160 +307,126 @@ footer{
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="srv-head rv">
-    <div>
-      <div class="sec-tag">我們的服務</div>
-      <h2 class="sec-h">全方位<br>設計服務</h2>
-    </div>
+    <div><div class="sec-tag">我們的服務</div><h2 class="sec-h">全方位<br>設計服務</h2></div>
     <p class="body-t">從概念到完工，我們提供端到端的設計服務，讓每個空間都成為獨一無二的藝術品。</p>
   </div>
   <div class="srv-list">
-    <div class="srv-row rv">
-      <div class="sr-n">01</div>
-      <div class="sr-title">住宅設計</div>
-      <div class="sr-desc">從輕裝修到全屋翻新，深入了解您的生活習慣，打造既美觀又實用的理想家園。包含平面規劃、材質選配、燈光設計等全套服務。</div>
-      <div class="sr-more">了解詳情 →</div>
-    </div>
-    <div class="srv-row rv">
-      <div class="sr-n">02</div>
-      <div class="sr-title">商業空間</div>
-      <div class="sr-desc">辦公室、餐廳、精品店等商業空間設計。結合品牌識別與使用者體驗，創造令客戶難忘的空間印象，提升商業競爭力。</div>
-      <div class="sr-more">了解詳情 →</div>
-    </div>
-    <div class="srv-row rv">
-      <div class="sr-n">03</div>
-      <div class="sr-title">燈光規劃</div>
-      <div class="sr-desc">光線是空間的靈魂。以自然採光與人工照明的精確搭配，創造不同時段的空間氛圍與層次感。</div>
-      <div class="sr-more">了解詳情 →</div>
-    </div>
-    <div class="srv-row rv">
-      <div class="sr-n">04</div>
-      <div class="sr-title">家具軟裝</div>
-      <div class="sr-desc">精選全球家具品牌，搭配布料、藝術品與裝飾擺件，為空間注入個性與溫度。提供完整軟裝採購與擺設服務。</div>
-      <div class="sr-more">了解詳情 →</div>
-    </div>
-    <div class="srv-row rv">
-      <div class="sr-n">05</div>
-      <div class="sr-title">工程監造</div>
-      <div class="sr-desc">設計完成後持續跟進工程品質，與施工團隊緊密協作，確保每一個細節都精準呈現設計意圖，交出令您滿意的作品。</div>
-      <div class="sr-more">了解詳情 →</div>
-    </div>
+    <div class="srv-row rv"><div class="sr-n">01</div><div class="sr-title">住宅設計</div><div class="sr-desc">從輕裝修到全屋翻新，深入了解您的生活習慣，打造既美觀又實用的理想家園。包含平面規劃、材質選配、燈光設計等全套服務。</div><div class="sr-more">了解詳情 →</div></div>
+    <div class="srv-row rv"><div class="sr-n">02</div><div class="sr-title">商業空間</div><div class="sr-desc">辦公室、餐廳、精品店等商業空間設計。結合品牌識別與使用者體驗，創造令客戶難忘的空間印象，提升商業競爭力。</div><div class="sr-more">了解詳情 →</div></div>
+    <div class="srv-row rv"><div class="sr-n">03</div><div class="sr-title">燈光規劃</div><div class="sr-desc">光線是空間的靈魂。以自然採光與人工照明的精確搭配，創造不同時段的空間氛圍與層次感。</div><div class="sr-more">了解詳情 →</div></div>
+    <div class="srv-row rv"><div class="sr-n">04</div><div class="sr-title">家具軟裝</div><div class="sr-desc">精選全球家具品牌，搭配布料、藝術品與裝飾擺件，為空間注入個性與溫度。提供完整軟裝採購與擺設服務。</div><div class="sr-more">了解詳情 →</div></div>
+    <div class="srv-row rv"><div class="sr-n">05</div><div class="sr-title">工程監造</div><div class="sr-desc">設計完成後持續跟進工程品質，與施工團隊緊密協作，確保每一個細節都精準呈現設計意圖，交出令您滿意的作品。</div><div class="sr-more">了解詳情 →</div></div>
   </div>
 </section>
 
 <!-- PORTFOLIO -->
 <section class="portfolio" id="portfolio">
   <div class="pf-head rv">
-    <div>
-      <div class="sec-tag">精選作品</div>
-      <h2 class="sec-h">代表作品</h2>
-    </div>
+    <div><div class="sec-tag">精選作品</div><h2 class="sec-h">代表作品</h2></div>
     <a href="#contact" class="btn-ln">洽詢合作</a>
   </div>
 
-  <!-- 案子標題 01 -->
-  <div style="padding:48px 60px 24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline">
+  <!-- P01 沐 Residence -->
+  <div class="proj-header">
     <div>
-      <div style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Project 01</div>
-      <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:400;letter-spacing:1px;color:var(--ink)">沐 Residence</div>
+      <div style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Project 01</div>
+      <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:400;letter-spacing:1px">沐 Residence</div>
     </div>
     <div style="font-size:10px;letter-spacing:2px;color:var(--dim)">私人住宅 · 彰化 · 2022</div>
   </div>
-  <div class="pf-grid">
-    <div class="pj"><div class="pj-bg" style="background-image:url(p01-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">起居空間</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p01-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">電視主牆</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p01-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">沙發區</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p01-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">主臥</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p01-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">更衣室</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
+  <div class="pf-grid" data-group="p01">
+    <div class="pj" data-src="p01-01.jpg" data-cap="起居空間 — 沐 Residence"><div class="pj-bg" style="background-image:url(p01-01.jpg);background-position:center 55%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">起居空間</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
+    <div class="pj" data-src="p01-02.jpg" data-cap="電視主牆 — 沐 Residence"><div class="pj-bg" style="background-image:url(p01-02.jpg);background-position:center 50%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">電視主牆</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
+    <div class="pj" data-src="p01-03.jpg" data-cap="沙發區 — 沐 Residence"><div class="pj-bg" style="background-image:url(p01-03.jpg);background-position:center 60%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">沙發區</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
+    <div class="pj" data-src="p01-04.jpg" data-cap="主臥 — 沐 Residence"><div class="pj-bg" style="background-image:url(p01-04.jpg);background-position:center 45%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">主臥</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
+    <div class="pj" data-src="p01-05.jpg" data-cap="更衣室 — 沐 Residence"><div class="pj-bg" style="background-image:url(p01-05.jpg);background-position:center 45%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">更衣室</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
   </div>
 
-  <!-- 案子標題 02 -->
-  <div style="padding:48px 60px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline">
+  <!-- P02 永安 Boutique -->
+  <div class="proj-header" style="border-top:1px solid var(--line)">
     <div>
-      <div style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Project 02</div>
-      <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:400;letter-spacing:1px;color:var(--ink)">永安 Boutique</div>
+      <div style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Project 02</div>
+      <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:400;letter-spacing:1px">永安 Boutique</div>
     </div>
     <div style="font-size:10px;letter-spacing:2px;color:var(--dim)">精品旅店 · 雲林 · 2023</div>
   </div>
-  <div class="pf-grid">
-    <div class="pj"><div class="pj-bg" style="background-image:url(p02-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">雙床客房</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p02-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">衛浴石紋</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p02-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">工作書桌</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p02-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">木質動線</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p02-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">浴室全景</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
+  <div class="pf-grid" data-group="p02">
+    <div class="pj" data-src="p02-01.jpg" data-cap="雙床客房 — 永安 Boutique"><div class="pj-bg" style="background-image:url(p02-01.jpg);background-position:center 45%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">雙床客房</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
+    <div class="pj" data-src="p02-02.jpg" data-cap="衛浴石紋 — 永安 Boutique"><div class="pj-bg" style="background-image:url(p02-02.jpg);background-position:center 40%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">衛浴石紋</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
+    <div class="pj" data-src="p02-03.jpg" data-cap="工作書桌 — 永安 Boutique"><div class="pj-bg" style="background-image:url(p02-03.jpg);background-position:center 55%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">工作書桌</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
+    <div class="pj" data-src="p02-04.jpg" data-cap="木質動線 — 永安 Boutique"><div class="pj-bg" style="background-image:url(p02-04.jpg);background-position:center 40%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">木質動線</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
+    <div class="pj" data-src="p02-05.jpg" data-cap="浴室全景 — 永安 Boutique"><div class="pj-bg" style="background-image:url(p02-05.jpg);background-position:center 45%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">浴室全景</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
   </div>
 
-  <!-- 案子標題 03 -->
-  <div style="padding:48px 60px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline">
+  <!-- P03 山嵐 Residence -->
+  <div class="proj-header" style="border-top:1px solid var(--line)">
     <div>
-      <div style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Project 03</div>
-      <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:400;letter-spacing:1px;color:var(--ink)">山嵐 Residence</div>
+      <div style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Project 03</div>
+      <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:400;letter-spacing:1px">山嵐 Residence</div>
     </div>
     <div style="font-size:10px;letter-spacing:2px;color:var(--dim)">私人住宅 · 彰化 · 2024</div>
   </div>
-  <div class="pf-grid">
-    <div class="pj"><div class="pj-bg" style="background-image:url(p03-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">起居空間</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p03-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">電視牆</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p03-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">多功能書房</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p03-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">玻璃格柵細節</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p03-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">兒童閣樓房</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
+  <div class="pf-grid" data-group="p03">
+    <div class="pj" data-src="p03-01.jpg" data-cap="起居空間 — 山嵐 Residence"><div class="pj-bg" style="background-image:url(p03-01.jpg);background-position:center 55%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">起居空間</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
+    <div class="pj" data-src="p03-02.jpg" data-cap="電視牆 — 山嵐 Residence"><div class="pj-bg" style="background-image:url(p03-02.jpg);background-position:center 50%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">電視牆</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
+    <div class="pj" data-src="p03-03.jpg" data-cap="多功能書房 — 山嵐 Residence"><div class="pj-bg" style="background-image:url(p03-03.jpg);background-position:center 50%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">多功能書房</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
+    <div class="pj" data-src="p03-04.jpg" data-cap="玻璃格柵細節 — 山嵐 Residence"><div class="pj-bg" style="background-image:url(p03-04.jpg);background-position:center 50%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">玻璃格柵細節</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
+    <div class="pj" data-src="p03-05.jpg" data-cap="兒童閣樓房 — 山嵐 Residence"><div class="pj-bg" style="background-image:url(p03-05.jpg);background-position:center 45%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">兒童閣樓房</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
   </div>
 
-  <!-- 案子標題 04 -->
-  <div style="padding:48px 60px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline">
+  <!-- P04 光映 Residence -->
+  <div class="proj-header" style="border-top:1px solid var(--line)">
     <div>
-      <div style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Project 04</div>
-      <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:400;letter-spacing:1px;color:var(--ink)">光映 Residence</div>
+      <div style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Project 04</div>
+      <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:400;letter-spacing:1px">光映 Residence</div>
     </div>
     <div style="font-size:10px;letter-spacing:2px;color:var(--dim)">私人住宅 · 2024</div>
   </div>
-  <div class="pf-grid">
-    <div class="pj"><div class="pj-bg" style="background-image:url(p04-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">起居空間</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p04-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">客餐廚全景</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p04-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">餐廳燈飾</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p04-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">玄關收納</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p04-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">木作細節</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
+  <div class="pf-grid" data-group="p04">
+    <div class="pj" data-src="p04-01.jpg" data-cap="起居空間 — 光映 Residence"><div class="pj-bg" style="background-image:url(p04-01.jpg);background-position:center 55%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">起居空間</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
+    <div class="pj" data-src="p04-02.jpg" data-cap="客餐廚全景 — 光映 Residence"><div class="pj-bg" style="background-image:url(p04-02.jpg);background-position:center 55%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">客餐廚全景</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
+    <div class="pj" data-src="p04-03.jpg" data-cap="餐廳燈飾 — 光映 Residence"><div class="pj-bg" style="background-image:url(p04-03.jpg);background-position:center 50%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">餐廳燈飾</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
+    <div class="pj" data-src="p04-04.jpg" data-cap="玄關收納 — 光映 Residence"><div class="pj-bg" style="background-image:url(p04-04.jpg);background-position:center 45%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">玄關收納</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
+    <div class="pj" data-src="p04-05.jpg" data-cap="木作細節 — 光映 Residence"><div class="pj-bg" style="background-image:url(p04-05.jpg);background-position:center 50%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">木作細節</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
   </div>
 
-  <!-- 案子標題 05 -->
-  <div style="padding:48px 60px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline">
+  <!-- P05 找晨 Find Morning -->
+  <div class="proj-header" style="border-top:1px solid var(--line)">
     <div>
-      <div style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Project 05</div>
-      <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:400;letter-spacing:1px;color:var(--ink)">找晨 Find Morning</div>
+      <div style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Project 05</div>
+      <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:400;letter-spacing:1px">找晨 Find Morning</div>
     </div>
     <div style="font-size:10px;letter-spacing:2px;color:var(--dim)">餐廳空間 · 台中 · 2025</div>
   </div>
-  <div class="pf-grid">
-    <div class="pj"><div class="pj-bg" style="background-image:url(p05-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">外觀</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p05-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">吧台大廳</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p05-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">座位區</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p05-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">燈光細節</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p05-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">夜晚街景</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
+  <div class="pf-grid" data-group="p05">
+    <div class="pj" data-src="p05-01.jpg" data-cap="外觀 — 找晨 Find Morning"><div class="pj-bg" style="background-image:url(p05-01.jpg);background-position:center 40%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">外觀</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
+    <div class="pj" data-src="p05-02.jpg" data-cap="吧台大廳 — 找晨 Find Morning"><div class="pj-bg" style="background-image:url(p05-02.jpg);background-position:center 50%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">吧台大廳</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
+    <div class="pj" data-src="p05-03.jpg" data-cap="座位區 — 找晨 Find Morning"><div class="pj-bg" style="background-image:url(p05-03.jpg);background-position:center 55%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">座位區</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
+    <div class="pj" data-src="p05-04.jpg" data-cap="燈光細節 — 找晨 Find Morning"><div class="pj-bg" style="background-image:url(p05-04.jpg);background-position:center 45%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">燈光細節</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
+    <div class="pj" data-src="p05-05.jpg" data-cap="夜晚街景 — 找晨 Find Morning"><div class="pj-bg" style="background-image:url(p05-05.jpg);background-position:center 35%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">夜晚街景</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
   </div>
 
-  <!-- 案子標題 06 -->
-  <div style="padding:48px 60px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline">
+  <!-- P06 沐光居 -->
+  <div class="proj-header" style="border-top:1px solid var(--line)">
     <div>
-      <div style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Project 06</div>
-      <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:400;letter-spacing:1px;color:var(--ink)">沐光居</div>
+      <div style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Project 06</div>
+      <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:400;letter-spacing:1px">沐光居</div>
     </div>
     <div style="font-size:10px;letter-spacing:2px;color:var(--dim)">私人會所 · 雲林 · 2025</div>
   </div>
-  <div class="pf-grid">
-    <div class="pj"><div class="pj-bg" style="background-image:url(p06-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">竹影中庭</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p06-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">廚房中島</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p06-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">格柵隔間</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p06-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">玄關木門</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(p06-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">衛浴天窗</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
+  <div class="pf-grid" data-group="p06">
+    <div class="pj" data-src="p06-01.jpg" data-cap="竹影中庭 — 沐光居"><div class="pj-bg" style="background-image:url(p06-01.jpg);background-position:center 55%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">竹影中庭</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
+    <div class="pj" data-src="p06-02.jpg" data-cap="廚房中島 — 沐光居"><div class="pj-bg" style="background-image:url(p06-02.jpg);background-position:center 55%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">廚房中島</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
+    <div class="pj" data-src="p06-03.jpg" data-cap="格柵隔間 — 沐光居"><div class="pj-bg" style="background-image:url(p06-03.jpg);background-position:center 50%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">格柵隔間</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
+    <div class="pj" data-src="p06-04.jpg" data-cap="玄關木門 — 沐光居"><div class="pj-bg" style="background-image:url(p06-04.jpg);background-position:center 50%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">玄關木門</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
+    <div class="pj" data-src="p06-05.jpg" data-cap="衛浴天窗 — 沐光居"><div class="pj-bg" style="background-image:url(p06-05.jpg);background-position:center 40%"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">衛浴天窗</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
   </div>
 </section>
 
 <!-- PROCESS -->
 <section class="process" id="process">
   <div class="pr-head rv">
-    <div>
-      <div class="sec-tag">設計流程</div>
-      <h2 class="sec-h">從初見<br>到完美</h2>
-    </div>
+    <div><div class="sec-tag">設計流程</div><h2 class="sec-h">從初見<br>到完美</h2></div>
     <p class="body-t">每一個完美空間的背後，都是一段精心規劃的旅程。我們用四個階段，確保您的夢想空間如實完工。</p>
   </div>
   <div class="pr-timeline">
@@ -705,32 +439,11 @@ footer{
 
 <!-- PHILOSOPHY -->
 <section class="testimonials">
-  <div class="ts-head rv">
-    <div class="sec-tag">設計理念</div>
-    <h2 class="sec-h">我們相信的事</h2>
-  </div>
+  <div class="ts-head rv"><div class="sec-tag">設計理念</div><h2 class="sec-h">我們相信的事</h2></div>
   <div class="ts-grid">
-    <div class="ts-card rv">
-      <span class="ts-q">I</span>
-      <p class="ts-body">空間不只是居住的容器，而是生活態度的延伸。每一個材質的選擇、每一道光線的落點，都在無聲地訴說居住者對生活的想像。</p>
-      <div class="ts-rule"></div>
-      <div class="ts-name">空間即語言</div>
-      <div class="ts-role">Space as Language</div>
-    </div>
-    <div class="ts-card rv">
-      <span class="ts-q">II</span>
-      <p class="ts-body">我們不追逐流行風格，而是深入理解每位業主獨特的生活節奏與美學偏好，讓空間在十年後依然感覺恰如其分，歷久而彌新。</p>
-      <div class="ts-rule"></div>
-      <div class="ts-name">恆久而非流行</div>
-      <div class="ts-role">Timeless over Trendy</div>
-    </div>
-    <div class="ts-card rv">
-      <span class="ts-q">III</span>
-      <p class="ts-body">細節是奢華的真正所在。不是昂貴的建材，而是每個轉角的比例、每道縫隙的精準，以及那些只有住在其中才能發現的用心。</p>
-      <div class="ts-rule"></div>
-      <div class="ts-name">細節定義品質</div>
-      <div class="ts-role">Detail Defines Quality</div>
-    </div>
+    <div class="ts-card rv"><span class="ts-q">I</span><p class="ts-body">空間不只是居住的容器，而是生活態度的延伸。每一個材質的選擇、每一道光線的落點，都在無聲地訴說居住者對生活的想像。</p><div class="ts-rule"></div><div class="ts-name">空間即語言</div><div class="ts-role">Space as Language</div></div>
+    <div class="ts-card rv"><span class="ts-q">II</span><p class="ts-body">我們不追逐流行風格，而是深入理解每位業主獨特的生活節奏與美學偏好，讓空間在十年後依然感覺恰如其分，歷久而彌新。</p><div class="ts-rule"></div><div class="ts-name">恆久而非流行</div><div class="ts-role">Timeless over Trendy</div></div>
+    <div class="ts-card rv"><span class="ts-q">III</span><p class="ts-body">細節是奢華的真正所在。不是昂貴的建材，而是每個轉角的比例、每道縫隙的精準，以及那些只有住在其中才能發現的用心。</p><div class="ts-rule"></div><div class="ts-name">細節定義品質</div><div class="ts-role">Detail Defines Quality</div></div>
   </div>
 </section>
 
@@ -768,10 +481,7 @@ footer{
 
 <!-- FOOTER -->
 <footer>
-  <div class="ft-l">
-    <div class="ft-logo">YUANTSUI</div>
-    <div class="ft-sub">圓淬空間美學</div>
-  </div>
+  <div class="ft-l"><div class="ft-logo">YUANTSUI</div><div class="ft-sub">圓淬空間美學</div></div>
   <ul class="ft-nav">
     <li><a href="#about">關於我們</a></li>
     <li><a href="#services">服務</a></li>
@@ -782,7 +492,7 @@ footer{
 </footer>
 
 <script>
-// cursor
+// ── CURSOR ──
 const c=document.getElementById('c'),cr=document.getElementById('cr');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c.style.left=mx+'px';c.style.top=my+'px';});
@@ -792,16 +502,53 @@ document.querySelectorAll('a,button').forEach(el=>{
   el.addEventListener('mouseleave',()=>{cr.style.transform='translate(-50%,-50%) scale(1)';cr.style.opacity='.15';});
 });
 
-// reveal on scroll
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('on');
-      obs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.rv, .rv2').forEach(el => obs.observe(el));
+// ── SCROLL REVEAL ──
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.rv,.rv2').forEach(el=>obs.observe(el));
+
+// ── LIGHTBOX ──
+const lb=document.getElementById('lb');
+const lbImg=document.getElementById('lb-img');
+const lbCap=document.getElementById('lb-caption');
+const lbCounter=document.getElementById('lb-counter');
+let allImgs=[], curIdx=0;
+
+// Collect all pj images globally
+allImgs = Array.from(document.querySelectorAll('.pj[data-src]')).map(el=>({
+  src: el.dataset.src,
+  cap: el.dataset.cap||''
+}));
+
+document.querySelectorAll('.pj[data-src]').forEach((el,i)=>{
+  el.addEventListener('click',()=>openLB(i));
+});
+
+function openLB(idx){
+  curIdx=idx;
+  showImg();
+  lb.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLB(){
+  lb.classList.remove('open');
+  document.body.style.overflow='';
+}
+function showImg(){
+  const item=allImgs[curIdx];
+  lbImg.src=item.src;
+  lbCap.textContent=item.cap;
+  lbCounter.textContent=(curIdx+1)+' / '+allImgs.length;
+}
+document.getElementById('lb-close').addEventListener('click',closeLB);
+document.getElementById('lb-prev').addEventListener('click',()=>{curIdx=(curIdx-1+allImgs.length)%allImgs.length;showImg();});
+document.getElementById('lb-next').addEventListener('click',()=>{curIdx=(curIdx+1)%allImgs.length;showImg();});
+lb.addEventListener('click',e=>{if(e.target===lb)closeLB();});
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')closeLB();
+  if(e.key==='ArrowLeft'){curIdx=(curIdx-1+allImgs.length)%allImgs.length;showImg();}
+  if(e.key==='ArrowRight'){curIdx=(curIdx+1)%allImgs.length;showImg();}
+});
 </script>
 </body>
 </html>
