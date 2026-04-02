@@ -202,7 +202,6 @@ nav{
 /* ── ABOUT — asymmetric editorial ── */
 .about{
   display:grid;
-  /* 55% text, 45% visual accent */
   grid-template-columns:55fr 45fr;
   min-height:80vh;
   border-bottom:1px solid var(--line);
@@ -219,7 +218,6 @@ nav{
   padding:60px 52px;
   position:relative;overflow:hidden;
 }
-/* large decorative number */
 .about-r-deco{
   font-family:'Playfair Display',serif;
   font-size:clamp(140px,16vw,220px);
@@ -269,7 +267,7 @@ nav{
 
 @media(max-width:768px){.about{grid-template-columns:1fr}.about-r{min-height:320px}.about-l{padding:60px 24px}}
 
-/* ── SERVICES — stacked list, editorial ── */
+/* ── SERVICES ── */
 .services{border-bottom:1px solid var(--line)}
 .srv-head{
   padding:80px 60px 56px;
@@ -292,21 +290,20 @@ nav{
 .sr-more{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateX(-8px);transition:all .3s;padding-top:6px;white-space:nowrap}
 @media(max-width:768px){.srv-head{grid-template-columns:1fr;padding:48px 24px;gap:20px}.srv-row{grid-template-columns:40px 1fr;padding:28px 24px;gap:16px}.sr-desc,.sr-more{display:none}}
 
-/* ── PORTFOLIO — editorial masonry feel ── */
+/* ── PORTFOLIO ── */
 .portfolio{border-bottom:1px solid var(--line)}
 .pf-head{
   padding:80px 60px 56px;
   display:flex;justify-content:space-between;align-items:flex-end;
   border-bottom:1px solid var(--line);
 }
-/* asymmetric grid */
 .pf-grid{
   display:grid;
   grid-template-columns:3fr 2fr 2fr;
   grid-template-rows:460px 320px;
 }
 .pj{position:relative;overflow:hidden;cursor:pointer;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
-.pj:nth-child(1){grid-column:1;grid-row:1/3} /* tall left */
+.pj:nth-child(1){grid-column:1;grid-row:1/3}
 .pj:nth-child(2){grid-column:2;grid-row:1}
 .pj:nth-child(3){grid-column:3;grid-row:1;border-right:none}
 .pj:nth-child(4){grid-column:2;grid-row:2;border-bottom:none}
@@ -314,11 +311,6 @@ nav{
 
 .pj-bg{position:absolute;inset:0;transition:transform .6s cubic-bezier(.23,1,.32,1);}
 .pj:hover .pj-bg{transform:scale(1.02)}
-.pj:nth-child(1) .pj-bg{background:linear-gradient(155deg,#dedad2,#ccc7bc)}
-.pj:nth-child(2) .pj-bg{background:linear-gradient(155deg,#ced3d8,#c1c7cd)}
-.pj:nth-child(3) .pj-bg{background:linear-gradient(155deg,#d4d0c8,#c9c4ba)}
-.pj:nth-child(4) .pj-bg{background:linear-gradient(155deg,#cbc7d0,#bfbbc8)}
-.pj:nth-child(5) .pj-bg{background:linear-gradient(155deg,#d0cdc6,#c5c1b9)}
 
 .pj-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(18,16,12,.55) 0%,transparent 45%);}
 
@@ -336,7 +328,7 @@ nav{
   .pj-name{font-size:18px}
 }
 
-/* ── PROCESS — horizontal timeline ── */
+/* ── PROCESS ── */
 .process{border-bottom:1px solid var(--line)}
 .pr-head{
   padding:80px 60px 56px;
@@ -447,9 +439,9 @@ footer{
   </div>
 </nav>
 
-<!-- HERO — full viewport, asymmetric dark panel -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-panel" style="background-image:url(images/hero-bg.jpg);background-size:cover;background-position:center;">
+  <div class="hero-panel" style="background-image:url(hero-bg.jpg);background-size:cover;background-position:center;">
     <div style="position:absolute;inset:0;background:rgba(20,14,8,0.45)"></div>
     <div class="hero-panel-year">2022</div>
   </div>
@@ -541,11 +533,10 @@ footer{
         選擇生活的方式。
       </div>
     </div>
-    
   </div>
 </section>
 
-<!-- SERVICES — list layout like luxury brand lookbook -->
+<!-- SERVICES -->
 <section class="services" id="services">
   <div class="srv-head rv">
     <div>
@@ -579,7 +570,6 @@ footer{
       <div class="sr-desc">精選全球家具品牌，搭配布料、藝術品與裝飾擺件，為空間注入個性與溫度。提供完整軟裝採購與擺設服務。</div>
       <div class="sr-more">了解詳情 →</div>
     </div>
-
     <div class="srv-row rv">
       <div class="sr-n">05</div>
       <div class="sr-title">工程監造</div>
@@ -608,12 +598,13 @@ footer{
     <div style="font-size:10px;letter-spacing:2px;color:var(--dim)">私人住宅 · 彰化 · 2022</div>
   </div>
   <div class="pf-grid">
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p01-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">起居空間</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p01-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">電視主牆</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p01-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">沙發區</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p01-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">主臥</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p01-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">更衣室</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p01-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">起居空間</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p01-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">電視主牆</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p01-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">沙發區</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p01-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">主臥</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p01-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">更衣室</div><div class="pj-name">沐 Residence</div><div class="pj-yr">彰化 · 2022</div></div></div>
   </div>
+
   <!-- 案子標題 02 -->
   <div style="padding:48px 60px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline">
     <div>
@@ -623,12 +614,13 @@ footer{
     <div style="font-size:10px;letter-spacing:2px;color:var(--dim)">精品旅店 · 雲林 · 2023</div>
   </div>
   <div class="pf-grid">
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p02-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">雙床客房</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p02-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">衛浴石紋</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p02-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">工作書桌</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p02-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">木質動線</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p02-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">浴室全景</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p02-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">雙床客房</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p02-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">衛浴石紋</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p02-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">工作書桌</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p02-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">木質動線</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p02-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">浴室全景</div><div class="pj-name">永安 Boutique</div><div class="pj-yr">雲林 · 2023</div></div></div>
   </div>
+
   <!-- 案子標題 03 -->
   <div style="padding:48px 60px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline">
     <div>
@@ -638,12 +630,13 @@ footer{
     <div style="font-size:10px;letter-spacing:2px;color:var(--dim)">私人住宅 · 彰化 · 2024</div>
   </div>
   <div class="pf-grid">
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p03-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">起居空間</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p03-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">電視牆</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p03-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">多功能書房</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p03-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">玻璃格柵細節</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p03-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">兒童閣樓房</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p03-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">起居空間</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p03-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">電視牆</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p03-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">多功能書房</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p03-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">玻璃格柵細節</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p03-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">兒童閣樓房</div><div class="pj-name">山嵐 Residence</div><div class="pj-yr">彰化 · 2024</div></div></div>
   </div>
+
   <!-- 案子標題 04 -->
   <div style="padding:48px 60px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline">
     <div>
@@ -653,12 +646,13 @@ footer{
     <div style="font-size:10px;letter-spacing:2px;color:var(--dim)">私人住宅 · 2024</div>
   </div>
   <div class="pf-grid">
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p04-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">起居空間</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p04-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">客餐廚全景</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p04-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">餐廳燈飾</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p04-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">玄關收納</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p04-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">木作細節</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p04-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">起居空間</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p04-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">客餐廚全景</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p04-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">餐廳燈飾</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p04-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">玄關收納</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p04-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">木作細節</div><div class="pj-name">光映 Residence</div><div class="pj-yr">2024</div></div></div>
   </div>
+
   <!-- 案子標題 05 -->
   <div style="padding:48px 60px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline">
     <div>
@@ -668,12 +662,13 @@ footer{
     <div style="font-size:10px;letter-spacing:2px;color:var(--dim)">餐廳空間 · 台中 · 2025</div>
   </div>
   <div class="pf-grid">
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p05-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">外觀</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p05-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">吧台大廳</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p05-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">座位區</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p05-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">燈光細節</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p05-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">夜晚街景</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p05-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">外觀</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p05-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">吧台大廳</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p05-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">座位區</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p05-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">燈光細節</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p05-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">夜晚街景</div><div class="pj-name">找晨 Find Morning</div><div class="pj-yr">台中 · 2025</div></div></div>
   </div>
+
   <!-- 案子標題 06 -->
   <div style="padding:48px 60px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline">
     <div>
@@ -683,11 +678,11 @@ footer{
     <div style="font-size:10px;letter-spacing:2px;color:var(--dim)">私人會所 · 雲林 · 2025</div>
   </div>
   <div class="pf-grid">
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p06-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">竹影中庭</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p06-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">廚房中島</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p06-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">格柵隔間</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p06-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">玄關木門</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
-    <div class="pj"><div class="pj-bg" style="background-image:url(images/p06-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">衛浴天窗</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p06-01.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">竹影中庭</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p06-02.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">廚房中島</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p06-03.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">格柵隔間</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p06-04.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">玄關木門</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
+    <div class="pj"><div class="pj-bg" style="background-image:url(p06-05.jpg);background-size:cover;background-position:center top"></div><div class="pj-veil"></div><div class="pj-info"><div class="pj-cat">衛浴天窗</div><div class="pj-name">沐光居</div><div class="pj-yr">雲林 · 2025</div></div></div>
   </div>
 </section>
 
@@ -749,7 +744,7 @@ footer{
       <div class="ct-items">
         <div class="ct-row"><div class="ct-ico">📍</div><div class="ct-d"><small>地址</small><span>台中市西區台灣大道二段 375 號 12F</span></div></div>
         <div class="ct-row"><div class="ct-ico">📞</div><div class="ct-d"><small>電話</small><span>0986-730-016</span></div></div>
-        <div class="ct-row"><div class="ct-ico">✉️</div><div class="ct-d"><small>信箱</small><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aad3dfcbc4ded9dfc384cccfeacdc7cbc3c684c9c5c7">[email&#160;protected]</a></span></div></div>
+        <div class="ct-row"><div class="ct-ico">✉️</div><div class="ct-d"><small>信箱</small><span>yuantsui.design@gmail.com</span></div></div>
         <div class="ct-row"><div class="ct-ico">💬</div><div class="ct-d"><small>LINE ID</small><span>@977hxkcy</span></div></div>
         <div class="ct-row"><div class="ct-ico">🕐</div><div class="ct-d"><small>服務時間</small><span>週一至週六 10:00 – 18:00</span></div></div>
       </div>
@@ -786,7 +781,7 @@ footer{
   <div class="ft-copy">© 2024 圓淬空間美學. All rights reserved.</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // cursor
 const c=document.getElementById('c'),cr=document.getElementById('cr');
 let mx=0,my=0,rx=0,ry=0;
