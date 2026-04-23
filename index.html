@@ -25,20 +25,21 @@
 <meta property="og:title" content="新竹．台中．彰化．雲林 室內設計推薦｜圓淬空間美學 YUANTSUI — 住宅．商空．質感生活的設計者">
 <meta property="og:description" content="深耕中部的室內設計公司，服務新竹、台中、彰化、雲林四縣市。專精住宅設計、商業空間、老屋翻新與全室裝修。以人為本，用光與材質打造你每天想回家的空間。免費初次諮詢。">
 <meta property="og:url" content="https://www.yuantsui.com/">
-<meta property="og:image" content="https://www.yuantsui.com/hero-bg.jpg">
+<meta property="og:image" content="https://www.yuantsui.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="圓淬空間美學 — 台中室內設計作品實景">
+<meta property="og:image:alt" content="圓淬空間美學 YUANTSUI — 新竹．台中．彰化．雲林 室內設計">
 
 <!-- ============ TWITTER CARD ============ -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="新竹．台中．彰化．雲林 室內設計推薦｜圓淬空間美學 YUANTSUI">
 <meta name="twitter:description" content="深耕中部的室內設計公司，服務新竹、台中、彰化、雲林。住宅、商空、老屋翻新全方位設計。">
-<meta name="twitter:image" content="https://www.yuantsui.com/hero-bg.jpg">
+<meta name="twitter:image" content="https://www.yuantsui.com/og-image.jpg">
 
-<!-- ============ FAVICON（建議後續補上實體檔案）============ -->
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- ============ FAVICON（瀏覽器分頁圖示）============ -->
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
 <!-- ============ AI 搜尋引擎優化（ChatGPT / Perplexity / Google AI Overview / Gemini）============ -->
 <meta name="ai-description" content="圓淬空間美學 YUANTSUI 是一間位於台中的室內設計公司，成立於 2022 年，服務範圍涵蓋新竹、台中、彰化、雲林四縣市。專精於住宅設計、商業空間、老屋翻新、燈光規劃、家具軟裝與工程監造。設計風格以東方美學融合現代主義為主，重視材質、光線與生活感，主要業主為追求質感生活的中高端客群。完工案例包含 38 坪彰化新婚住宅、雲林精品旅店、45 坪彰化三代同堂住宅、台中退休宅、台中找晨早午餐餐廳、雲林 60 坪私人會所等。聯繫方式：0986-730-016、yuantsui.design@gmail.com、LINE：@977hxkcy。">
@@ -59,7 +60,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preload" as="image" href="hero-bg.jpg" fetchpriority="high">
+<link rel="preload" as="video" href="hero-video.mp4" type="video/mp4">
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+TC:wght@200;300;400&family=Noto+Sans+TC:wght@200;300;400&display=swap" rel="stylesheet">
 
@@ -98,8 +99,8 @@
   "alternateName": ["YUANTSUI", "圓淬設計", "圓淬室內設計"],
   "description": "圓淬空間美學是中部在地的室內設計公司，以台中為總部據點，服務新竹、台中、彰化、雲林四縣市，專精住宅設計、商業空間、老屋翻新、燈光規劃與家具軟裝，以人為本打造質感生活場域。",
   "url": "https://www.yuantsui.com/",
-  "logo": "https://www.yuantsui.com/logo.png",
-  "image": "https://www.yuantsui.com/hero-bg.jpg",
+  "logo": "https://www.yuantsui.com/logo-dark.png",
+  "image": "https://www.yuantsui.com/og-image.jpg",
   "telephone": "+886-986-730-016",
   "email": "yuantsui.design@gmail.com",
   "priceRange": "$$$",
@@ -252,26 +253,28 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%;height:auto;display:block}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:60px;background:rgba(247,245,242,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule)}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:400;letter-spacing:.28em;text-transform:uppercase}
-.nav-logo small{display:block;font-family:'Noto Sans TC',sans-serif;font-size:8px;letter-spacing:.15em;color:var(--dim);margin-top:1px;font-weight:300}
+nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;background:rgba(247,245,242,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule)}
+.nav-logo{display:flex;align-items:center;height:100%}
+.nav-logo-img{height:38px;width:auto;display:block;transition:opacity .2s}
+.nav-logo:hover .nav-logo-img{opacity:.7}
 .nav-links{display:flex;gap:40px;list-style:none}
 .nav-links a{font-size:11px;letter-spacing:.15em;color:var(--mid);transition:color .2s}
 .nav-links a:hover{color:var(--ink)}
 .nav-cta{font-size:10px;letter-spacing:.18em;border-bottom:1px solid var(--ink);padding-bottom:1px;transition:opacity .2s}
 .nav-cta:hover{opacity:.45}
-@media(max-width:768px){nav{padding:0 24px}.nav-links{display:none}}
+@media(max-width:768px){nav{padding:0 24px;height:60px}.nav-links{display:none}.nav-logo-img{height:30px}}
 
 /* HERO */
-.hero{min-height:100vh;padding-top:60px;display:grid;grid-template-columns:1fr 1fr}
-.hero-img-wrap{overflow:hidden;position:relative}
-.hero-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:brightness(.92)}
-.hero-text{display:flex;flex-direction:column;justify-content:flex-end;padding:80px 64px 80px 72px}
+.hero{min-height:100vh;padding-top:68px;display:grid;grid-template-columns:1.2fr 1fr;position:relative}
+.hero-text{display:flex;flex-direction:column;justify-content:center;padding:60px 64px 60px 72px;order:1}
+.hero-video-wrap{position:relative;overflow:hidden;background:var(--bg2);order:2}
+.hero-video{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.hero-video-veil{position:absolute;inset:0;background:linear-gradient(to left,transparent 70%,rgba(247,245,242,.4));pointer-events:none}
 .hero-eyebrow{font-size:10px;letter-spacing:.2em;color:var(--dim);margin-bottom:28px;opacity:0;animation:rise .8s .2s forwards}
 .hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,5vw,82px);font-weight:300;line-height:1.05;opacity:0;animation:rise .9s .4s forwards;margin-bottom:20px}
 .hero-h1 em{font-style:italic;color:var(--accent)}
 .hero-h1-tw{font-family:'Noto Serif TC',serif;font-size:clamp(22px,2.2vw,32px);font-weight:300;color:var(--ink);margin-bottom:28px;letter-spacing:.05em;opacity:0;animation:rise .9s .5s forwards}
-.hero-sub{font-size:13px;line-height:2.2;color:var(--mid);max-width:380px;margin-bottom:40px;opacity:0;animation:rise .9s .6s forwards}
+.hero-sub{font-size:13px;line-height:2.2;color:var(--mid);max-width:420px;margin-bottom:32px;opacity:0;animation:rise .9s .6s forwards}
 .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;opacity:0;animation:rise .9s .65s forwards}
 .hero-tag{font-size:10px;letter-spacing:.1em;color:var(--mid);border:1px solid var(--rule);padding:6px 12px;border-radius:20px}
 .hero-btns{display:flex;gap:24px;align-items:center;flex-wrap:wrap;opacity:0;animation:rise .9s .75s forwards}
@@ -279,7 +282,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:cen
 .btn-p:hover{background:var(--ink);color:var(--bg)}
 .btn-g{font-size:11px;letter-spacing:.18em;color:var(--mid);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:all .25s}
 .btn-g:hover{color:var(--ink);border-color:var(--ink)}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-img-wrap{height:56vw}.hero-text{padding:48px 24px 64px}}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-text{padding:48px 24px 48px;order:2}
+  .hero-video-wrap{height:75vh;max-height:680px;order:1}
+}
 
 /* TICKER */
 .ticker{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);overflow:hidden;padding:14px 0;background:var(--bg2)}
@@ -444,8 +451,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:cen
 /* FOOTER */
 footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--bg2)}
 .ft-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
-.ft-brand .ft-logo{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:.28em;text-transform:uppercase;margin-bottom:6px}
-.ft-brand .ft-sub{font-family:'Noto Serif TC',serif;font-size:13px;color:var(--ink);margin-bottom:16px;letter-spacing:.04em}
+.ft-brand .ft-logo-img{height:44px;width:auto;display:block;margin-bottom:20px;opacity:.9}
 .ft-brand p{font-size:11px;color:var(--mid);line-height:2;max-width:300px}
 .ft-col h4{font-size:10px;letter-spacing:.18em;color:var(--ink);margin-bottom:20px;font-weight:400}
 .ft-col ul{list-style:none}
@@ -508,8 +514,7 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
 <!-- NAV -->
 <nav aria-label="主選單">
   <a href="#top" class="nav-logo" aria-label="圓淬空間美學 回首頁">
-    YUANTSUI
-    <small>圓淬空間美學</small>
+    <img src="logo-dark.png" alt="圓淬空間美學 YUANTSUI" class="nav-logo-img">
   </a>
   <ul class="nav-links">
     <li><a href="#about">關於我們</a></li>
@@ -524,14 +529,11 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-img-wrap">
-    <img src="hero-bg.jpg" alt="圓淬空間美學台中室內設計作品 — 溫暖自然光灑落的現代住宅起居空間" width="1200" height="900">
-  </div>
   <div class="hero-text">
     <p class="hero-eyebrow">室內設計 · 新竹．台中．彰化．雲林 · 2022 創立</p>
     <h2 class="hero-h1">YUANTSUI<br><em>Design</em></h2>
     <p class="hero-h1-tw">圓淬空間美學</p>
-    <p class="hero-sub">每天早晨醒來的那道光、下班回家推門那聲「我回來了」— 我們是深耕中部的<strong style="color:var(--ink);font-weight:400">室內設計團隊</strong>，服務<strong style="color:var(--ink);font-weight:400">新竹、台中、彰化、雲林</strong>四縣市，用十年經驗與對細節的執念，陪你把家變成真正想回去的地方。</p>
+    <p class="hero-sub">深耕中部的<strong style="color:var(--ink);font-weight:400">室內設計團隊</strong>，服務<strong style="color:var(--ink);font-weight:400">新竹、台中、彰化、雲林</strong>四縣市。住宅．商空．老屋翻新，用光與材質打造你真正想回去的空間。</p>
     <div class="hero-tags">
       <span class="hero-tag">新竹室內設計</span>
       <span class="hero-tag">台中室內設計</span>
@@ -543,6 +545,21 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
       <a href="#portfolio" class="btn-p" data-ga="hero_view_portfolio">瀏覽設計作品</a>
       <a href="#contact" class="btn-g" data-ga="hero_book_consult">預約免費諮詢 →</a>
     </div>
+  </div>
+  <div class="hero-video-wrap">
+    <video
+      class="hero-video"
+      src="hero-video.mp4"
+      poster="hero-video-poster.jpg"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      aria-label="圓淬空間美學設計作品影片">
+      您的瀏覽器不支援影片播放。
+    </video>
+    <div class="hero-video-veil"></div>
   </div>
 </section>
 
@@ -964,9 +981,8 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
 <footer>
   <div class="ft-grid">
     <div class="ft-brand">
-      <div class="ft-logo">YUANTSUI</div>
-      <div class="ft-sub">圓淬空間美學</div>
-      <p>深耕台中的室內設計公司，專精住宅設計、商業空間、老屋翻新、燈光規劃與家具軟裝。以人為本，用光與材質打造你真正想回去的空間。</p>
+      <img src="logo-dark.png" alt="圓淬空間美學 YUANTSUI" class="ft-logo-img">
+      <p>深耕中部的室內設計公司，專精住宅設計、商業空間、老屋翻新、燈光規劃與家具軟裝。以人為本，用光與材質打造你真正想回去的空間。</p>
     </div>
     <div class="ft-col">
       <h4>設計服務</h4>
