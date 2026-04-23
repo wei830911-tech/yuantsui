@@ -62,7 +62,7 @@
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preload" as="video" href="hero-video.mp4" type="video/mp4">
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+TC:wght@200;300;400&family=Noto+Sans+TC:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500&family=Marcellus&family=Noto+Serif+TC:wght@200;300;400;500&family=Noto+Sans+TC:wght@200;300;400&display=swap" rel="stylesheet">
 
 <!-- ============ GOOGLE ANALYTICS 4（請替換 G-XXXXXXXXXX 為你的實際 GA4 評估 ID）============ -->
 <!-- 使用步驟：
@@ -245,10 +245,19 @@
 </script>
 
 <style>
-:root{--bg:#F7F5F2;--bg2:#EEEAE4;--ink:#1A1816;--mid:#6B6460;--dim:#A8A29E;--rule:rgba(26,24,22,.1);--accent:#8C8580;--warm:#B8A594;}
+:root{
+  --bg:#FFFFFF;
+  --bg2:#F8F8F6;
+  --ink:#0D0D0D;
+  --mid:#555555;
+  --dim:#999999;
+  --rule:rgba(13,13,13,.08);
+  --accent:#1A1816;
+  --gold:#8B7355;
+}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;letter-spacing:.03em;overflow-x:hidden;line-height:1.7}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;letter-spacing:.02em;overflow-x:hidden;line-height:1.7}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;height:auto;display:block}
 
@@ -265,227 +274,218 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:cen
 @media(max-width:768px){nav{padding:0 24px;height:60px}.nav-links{display:none}.nav-logo-img{height:30px}}
 
 /* HERO */
-.hero{min-height:100vh;padding-top:68px;display:grid;grid-template-columns:1.2fr 1fr;position:relative}
-.hero-text{display:flex;flex-direction:column;justify-content:center;padding:60px 64px 60px 72px;order:1}
+.hero{min-height:100vh;padding-top:68px;display:grid;grid-template-columns:1.15fr 1fr;position:relative;background:var(--bg)}
+.hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 80px 80px 88px;order:1}
 .hero-video-wrap{position:relative;overflow:hidden;background:var(--bg2);order:2}
+.hero-video-wrap::after{content:"";position:absolute;top:0;left:0;bottom:0;width:1px;background:var(--rule);z-index:3}
 .hero-video{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.hero-video-veil{position:absolute;inset:0;background:linear-gradient(to left,transparent 70%,rgba(247,245,242,.4));pointer-events:none}
-.hero-eyebrow{font-size:10px;letter-spacing:.2em;color:var(--dim);margin-bottom:28px;opacity:0;animation:rise .8s .2s forwards}
-.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,5vw,82px);font-weight:300;line-height:1.05;opacity:0;animation:rise .9s .4s forwards;margin-bottom:20px}
-.hero-h1 em{font-style:italic;color:var(--accent)}
-.hero-h1-tw{font-family:'Noto Serif TC',serif;font-size:clamp(22px,2.2vw,32px);font-weight:300;color:var(--ink);margin-bottom:28px;letter-spacing:.05em;opacity:0;animation:rise .9s .5s forwards}
-.hero-sub{font-size:13px;line-height:2.2;color:var(--mid);max-width:420px;margin-bottom:32px;opacity:0;animation:rise .9s .6s forwards}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;opacity:0;animation:rise .9s .65s forwards}
-.hero-tag{font-size:10px;letter-spacing:.1em;color:var(--mid);border:1px solid var(--rule);padding:6px 12px;border-radius:20px}
-.hero-btns{display:flex;gap:24px;align-items:center;flex-wrap:wrap;opacity:0;animation:rise .9s .75s forwards}
-.btn-p{font-size:11px;letter-spacing:.18em;border:1px solid var(--ink);padding:14px 32px;transition:all .25s;display:inline-block}
+.hero-video-veil{position:absolute;inset:0;pointer-events:none}
+.hero-eyebrow{font-family:'Marcellus',serif;font-size:11px;letter-spacing:.3em;color:var(--dim);margin-bottom:40px;text-transform:uppercase;opacity:0;animation:rise .8s .2s forwards}
+.hero-h1{font-family:'Marcellus',serif;font-size:clamp(48px,5.4vw,92px);font-weight:400;line-height:1.02;opacity:0;animation:rise .9s .4s forwards;margin-bottom:24px;letter-spacing:.01em}
+.hero-h1 em{font-style:normal;color:var(--gold);letter-spacing:.03em}
+.hero-h1-tw{font-family:'Noto Serif TC',serif;font-size:clamp(18px,1.8vw,24px);font-weight:300;color:var(--mid);margin-bottom:48px;letter-spacing:.35em;opacity:0;animation:rise .9s .5s forwards}
+.hero-sub{font-family:'Noto Serif TC',serif;font-size:15px;line-height:2;color:var(--mid);max-width:420px;margin-bottom:56px;font-weight:300;letter-spacing:.04em;opacity:0;animation:rise .9s .6s forwards}
+.hero-btns{display:flex;gap:32px;align-items:center;flex-wrap:wrap;opacity:0;animation:rise .9s .75s forwards}
+.btn-p{font-family:'Marcellus',serif;font-size:12px;letter-spacing:.3em;border:1px solid var(--ink);padding:16px 40px;transition:all .3s;display:inline-block;text-transform:uppercase}
 .btn-p:hover{background:var(--ink);color:var(--bg)}
-.btn-g{font-size:11px;letter-spacing:.18em;color:var(--mid);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:all .25s}
-.btn-g:hover{color:var(--ink);border-color:var(--ink)}
+.btn-g{font-family:'Marcellus',serif;font-size:12px;letter-spacing:.3em;color:var(--mid);transition:all .25s;text-transform:uppercase;position:relative;padding-bottom:4px}
+.btn-g::after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--rule);transition:background .25s}
+.btn-g:hover{color:var(--ink)}
+.btn-g:hover::after{background:var(--ink)}
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-text{padding:48px 24px 48px;order:2}
-  .hero-video-wrap{height:75vh;max-height:680px;order:1}
+  .hero-text{padding:56px 28px 56px;order:2}
+  .hero-video-wrap{height:72vh;max-height:680px;order:1}
 }
 
-/* TICKER */
-.ticker{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);overflow:hidden;padding:14px 0;background:var(--bg2)}
-.ticker-inner{display:flex;gap:64px;white-space:nowrap;animation:ticker 36s linear infinite}
-.ticker-item{font-size:11px;letter-spacing:.18em;color:var(--mid);flex-shrink:0}
-.ticker-item::before{content:"◦";margin-right:16px;color:var(--dim)}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* DIVIDER */
+.divider-row{height:1px;background:var(--rule)}
 
 /* SECTION */
-.section{padding:120px 48px;border-bottom:1px solid var(--rule)}
-.inner{max-width:1200px;margin:0 auto}
-@media(max-width:768px){.section{padding:72px 24px}}
+.section{padding:140px 48px;border-bottom:1px solid var(--rule)}
+.section:last-of-type{border-bottom:none}
+.inner{max-width:1240px;margin:0 auto}
+@media(max-width:768px){.section{padding:80px 24px}}
 
 /* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.about-h2{font-family:'Noto Serif TC',serif;font-size:clamp(34px,3.6vw,54px);font-weight:300;line-height:1.25;margin-bottom:32px;letter-spacing:.03em}
-.about-h2 em{font-style:normal;color:var(--accent);font-family:'Cormorant Garamond',serif}
-.body-t{font-size:14px;line-height:2.1;color:var(--mid)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start;padding-bottom:88px;border-bottom:1px solid var(--rule)}
+.about-h2{font-family:'Marcellus',serif;font-size:clamp(38px,4vw,62px);font-weight:400;line-height:1.15;margin-bottom:40px;letter-spacing:.01em;color:var(--ink)}
+.about-h2 em{font-style:normal;color:var(--gold)}
+.body-t{font-family:'Noto Serif TC',serif;font-size:15px;line-height:2.1;color:var(--mid);font-weight:300;letter-spacing:.03em}
 .body-t strong{color:var(--ink);font-weight:400}
-.pillars{display:grid;grid-template-columns:1fr 1fr;margin-top:60px;border-top:1px solid var(--rule)}
-.pl{padding:28px 0;border-bottom:1px solid var(--rule)}
-.pl:nth-child(odd){padding-right:28px}
-.pl:nth-child(even){padding-left:28px;border-left:1px solid var(--rule)}
-.pl-n{font-size:10px;letter-spacing:.18em;color:var(--dim);margin-bottom:8px}
-.pl-t{font-size:14px;margin-bottom:6px;letter-spacing:.04em;color:var(--ink)}
-.pl-d{font-size:12px;color:var(--mid);line-height:1.9}
-.about-right{position:sticky;top:80px}
-.about-quote{font-family:'Noto Serif TC',serif;font-size:clamp(20px,2vw,26px);font-weight:300;line-height:1.8;color:var(--ink);border-left:2px solid var(--accent);padding-left:36px;margin-bottom:48px;letter-spacing:.05em}
-.about-quote em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--accent);font-size:.9em;display:block;margin-top:10px;letter-spacing:.02em}
-.stats{display:flex;gap:48px;border-top:1px solid var(--rule);padding-top:32px}
-.stat-n{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;line-height:1;color:var(--ink)}
-.stat-l{font-size:10px;letter-spacing:.16em;color:var(--dim);margin-top:6px}
-@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px}.about-right{position:static}}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);margin-top:88px;gap:0}
+.pl{padding:0 32px 0 0;border-right:1px solid var(--rule);padding-left:0}
+.pl:first-child{padding-left:0}
+.pl:last-child{border-right:none;padding-right:0}
+.pl-n{font-family:'Marcellus',serif;font-size:12px;letter-spacing:.24em;color:var(--gold);margin-bottom:16px}
+.pl-t{font-family:'Noto Serif TC',serif;font-size:17px;margin-bottom:14px;letter-spacing:.06em;color:var(--ink);font-weight:400}
+.pl-d{font-size:12px;color:var(--mid);line-height:2;letter-spacing:.03em}
+.about-right{position:sticky;top:100px}
+.about-quote{font-family:'Noto Serif TC',serif;font-size:clamp(22px,2.2vw,28px);font-weight:300;line-height:1.9;color:var(--ink);padding-left:0;margin-bottom:56px;letter-spacing:.08em;position:relative}
+.about-quote::before{content:"";position:absolute;left:-28px;top:10px;width:12px;height:1px;background:var(--gold)}
+.stats{display:flex;gap:64px;border-top:1px solid var(--rule);padding-top:40px}
+.stat-n{font-family:'Marcellus',serif;font-size:52px;font-weight:400;line-height:1;color:var(--ink);letter-spacing:.02em}
+.stat-l{font-family:'Marcellus',serif;font-size:10px;letter-spacing:.24em;color:var(--dim);margin-top:10px;text-transform:uppercase}
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr;gap:56px;padding-bottom:56px}
+  .about-right{position:static}
+  .about-quote{padding-left:24px}
+  .about-quote::before{left:0}
+  .pillars{grid-template-columns:1fr 1fr;gap:0;margin-top:56px}
+  .pl{padding:24px 20px;border-bottom:1px solid var(--rule)}
+  .pl:nth-child(2){border-right:none}
+}
 
 /* SERVICES */
-.srv-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:64px;padding-bottom:52px;border-bottom:1px solid var(--rule)}
-.sec-label{font-size:10px;letter-spacing:.22em;color:var(--dim);margin-bottom:20px;text-transform:uppercase}
-.sec-h{font-family:'Noto Serif TC',serif;font-size:clamp(32px,3.2vw,48px);font-weight:300;line-height:1.2;letter-spacing:.03em}
-.sec-h em{font-style:normal;color:var(--accent);font-family:'Cormorant Garamond',serif}
+.srv-head{display:grid;grid-template-columns:1fr 1fr;gap:100px;margin-bottom:80px;padding-bottom:64px;border-bottom:1px solid var(--rule)}
+.sec-label{font-family:'Marcellus',serif;font-size:11px;letter-spacing:.3em;color:var(--gold);margin-bottom:24px;text-transform:uppercase}
+.sec-h{font-family:'Marcellus',serif;font-size:clamp(36px,3.8vw,58px);font-weight:400;line-height:1.15;letter-spacing:.01em;color:var(--ink)}
+.sec-h em{font-style:normal;color:var(--gold)}
 .srv-list{border-top:1px solid var(--rule)}
-.srv-item{display:grid;grid-template-columns:48px 1fr 1.4fr 40px;gap:40px;align-items:start;padding:36px 0;border-bottom:1px solid var(--rule);transition:background .25s}
-.srv-item:hover{background:var(--bg2);margin:0 -48px;padding:36px 48px}
-.srv-num{font-size:11px;color:var(--dim);padding-top:4px;letter-spacing:.1em}
-.srv-name{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:300;letter-spacing:.05em;color:var(--ink)}
-.srv-name em{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--dim);margin-top:4px;letter-spacing:.08em}
-.srv-desc{font-size:12px;color:var(--mid);line-height:2;padding-top:6px}
-.srv-desc strong{color:var(--ink);font-weight:400}
-.srv-arr{font-size:14px;color:var(--dim);text-align:right;padding-top:4px;opacity:0;transition:opacity .25s}
-.srv-item:hover .srv-arr{opacity:1}
-@media(max-width:900px){.srv-head{grid-template-columns:1fr;gap:24px;margin-bottom:40px}.srv-item{grid-template-columns:36px 1fr;gap:20px}.srv-desc,.srv-arr{display:none}.srv-item:hover{margin:0;padding:36px 0}}
+.srv-item{display:grid;grid-template-columns:64px 1.2fr 1.8fr 40px;gap:48px;align-items:center;padding:44px 0;border-bottom:1px solid var(--rule);transition:all .3s}
+.srv-item:hover{background:var(--bg2);margin:0 -48px;padding:44px 48px}
+.srv-num{font-family:'Marcellus',serif;font-size:13px;color:var(--dim);letter-spacing:.1em}
+.srv-name{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:400;letter-spacing:.08em;color:var(--ink)}
+.srv-name em{display:block;font-family:'Marcellus',serif;font-style:normal;font-size:12px;color:var(--gold);margin-top:8px;letter-spacing:.24em;text-transform:uppercase}
+.srv-desc{font-family:'Noto Serif TC',serif;font-size:14px;color:var(--mid);line-height:2;font-weight:300;letter-spacing:.03em}
+.srv-arr{font-family:'Marcellus',serif;font-size:18px;color:var(--dim);text-align:right;opacity:0;transition:all .3s}
+.srv-item:hover .srv-arr{opacity:1;color:var(--gold);transform:translateX(4px)}
+@media(max-width:900px){.srv-head{grid-template-columns:1fr;gap:24px;margin-bottom:48px}.srv-item{grid-template-columns:40px 1fr;gap:20px;padding:32px 0}.srv-desc,.srv-arr{display:none}.srv-item:hover{margin:0;padding:32px 0}}
 
 /* PORTFOLIO */
-.pf-head{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:48px;border-bottom:1px solid var(--rule)}
-.pf-intro{font-size:13px;color:var(--mid);line-height:2;max-width:420px;margin-top:20px}
+.pf-head{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:64px;border-bottom:1px solid var(--rule)}
+.pf-intro{display:none}
 .proj-block{border-bottom:1px solid var(--rule)}
-.proj-meta{display:grid;grid-template-columns:1fr 1fr;align-items:baseline;padding:44px 48px 36px;border-bottom:1px solid rgba(26,24,22,.06);gap:24px}
-.proj-title{font-family:'Noto Serif TC',serif;font-size:clamp(24px,2.4vw,36px);font-weight:300;letter-spacing:.04em}
-.proj-title em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--accent);font-size:.7em;display:block;margin-top:4px;letter-spacing:.05em}
-.proj-detail{text-align:right;font-size:11px;letter-spacing:.14em;color:var(--mid);line-height:1.8}
-.proj-detail span{display:inline-block;margin-left:4px;color:var(--dim)}
-.proj-story{padding:0 48px 36px;font-size:13px;color:var(--mid);line-height:2;max-width:720px}
-.proj-story strong{color:var(--ink);font-weight:400}
-.proj-imgs{display:flex;flex-direction:column}
-.prow{position:relative;overflow:hidden;cursor:pointer;border-bottom:1px solid rgba(26,24,22,.06)}
-.prow:last-child{border-bottom:none}
+.proj-block:last-child{border-bottom:none}
+.proj-meta{display:grid;grid-template-columns:1fr auto;align-items:baseline;padding:72px 48px 56px;gap:48px;max-width:1400px;margin:0 auto}
+.proj-num{font-family:'Marcellus',serif;font-size:11px;letter-spacing:.3em;color:var(--gold);margin-bottom:20px;text-transform:uppercase}
+.proj-title{font-family:'Marcellus',serif;font-size:clamp(32px,3.2vw,52px);font-weight:400;letter-spacing:.02em;line-height:1.1;color:var(--ink)}
+.proj-title em{font-style:normal;font-family:'Marcellus',serif;color:var(--gold);font-size:.42em;display:block;margin-top:14px;letter-spacing:.24em;text-transform:uppercase;font-weight:400}
+.proj-detail{text-align:right;font-family:'Marcellus',serif;font-size:11px;letter-spacing:.22em;color:var(--dim);line-height:2;text-transform:uppercase}
+.proj-detail span{display:inline-block;margin-left:6px}
+.proj-detail br + span,.proj-detail{color:var(--mid)}
+.proj-imgs{display:flex;flex-direction:column;gap:0}
+.prow{position:relative;overflow:hidden;cursor:pointer;background:var(--bg2)}
 .prow.tall{height:80vw;max-height:920px}
 .prow.wide{height:56vw;max-height:680px}
 .prow.med{height:68vw;max-height:800px}
-.pbg{position:absolute;inset:0;background-size:cover;transition:transform .7s cubic-bezier(.23,1,.32,1)}
-.prow:hover .pbg{transform:scale(1.025)}
-.pveil{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,12,10,.55) 0%,transparent 42%);opacity:0;transition:opacity .4s}
+.pbg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.8s cubic-bezier(.19,1,.22,1)}
+.prow:hover .pbg{transform:scale(1.08)}
+.pveil{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,13,13,.55) 0%,rgba(13,13,13,.12) 30%,transparent 60%);opacity:0;transition:opacity .6s ease}
 .prow:hover .pveil{opacity:1}
-.pcap{position:absolute;bottom:0;left:0;right:0;padding:28px 36px;display:flex;justify-content:space-between;align-items:flex-end;opacity:0;transform:translateY(6px);transition:all .4s;z-index:2}
+.pcap{position:absolute;bottom:0;left:0;right:0;padding:36px 44px;display:flex;justify-content:space-between;align-items:flex-end;opacity:0;transform:translateY(12px);transition:all .6s cubic-bezier(.19,1,.22,1);z-index:2}
 .prow:hover .pcap{opacity:1;transform:translateY(0)}
-.pcat{font-size:9px;letter-spacing:.22em;color:rgba(255,255,255,.6)}
-.pname{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#fff}
+.pcat{font-family:'Marcellus',serif;font-size:10px;letter-spacing:.28em;color:rgba(255,255,255,.7);text-transform:uppercase}
+.pname{font-family:'Marcellus',serif;font-size:22px;font-weight:400;color:#fff;letter-spacing:.04em}
+/* 圖片載入時的優雅淡入 */
+.prow::before{content:"";position:absolute;inset:0;background:var(--bg2);z-index:1;opacity:0;transition:opacity .3s;pointer-events:none}
 @media(max-width:768px){
-  .proj-meta{grid-template-columns:1fr;gap:6px;padding:28px 24px 20px}
+  .proj-meta{grid-template-columns:1fr;gap:12px;padding:40px 24px 32px}
   .proj-detail{text-align:left}
-  .proj-story{padding:0 24px 28px}
-  .prow.tall{height:100vw}.prow.wide{height:72vw}.prow.med{height:88vw}
-  .pcap{opacity:1;transform:none;padding:18px 20px}
-  .pf-head{flex-direction:column;gap:16px;align-items:flex-start}
+  .prow.tall{height:100vw}
+  .prow.wide{height:72vw}
+  .prow.med{height:88vw}
+  .pcap{opacity:1;transform:none;padding:24px 24px;background:linear-gradient(to top,rgba(13,13,13,.65) 0%,transparent 100%)}
+  .pf-head{flex-direction:column;gap:24px;align-items:flex-start;padding-bottom:40px}
 }
 
-/* SERVICE AREA 四縣市 */
-.area-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
-.area-card{padding:48px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);transition:background .3s;background:var(--bg)}
-.area-card:hover{background:var(--bg2)}
-.area-head{display:flex;align-items:baseline;gap:16px;margin-bottom:28px;flex-wrap:wrap}
-.area-num{font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--dim);letter-spacing:.1em}
-.area-title{font-family:'Noto Serif TC',serif;font-size:26px;font-weight:400;letter-spacing:.04em;color:var(--ink)}
-.area-en{font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:var(--accent);letter-spacing:.05em}
-.area-desc{font-size:13px;color:var(--mid);line-height:2.1;margin-bottom:24px}
-.area-desc strong{color:var(--ink);font-weight:400}
-.area-spots{list-style:none;padding-top:20px;border-top:1px solid var(--rule)}
-.area-spots li{font-size:12px;color:var(--mid);padding:8px 0;letter-spacing:.03em;position:relative;padding-left:18px}
-.area-spots li::before{content:"—";position:absolute;left:0;color:var(--accent)}
-@media(max-width:768px){.area-grid{grid-template-columns:1fr}.area-card{padding:36px 28px}}
-
 /* PROCESS */
-.pr-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:64px;padding-bottom:52px;border-bottom:1px solid var(--rule)}
+.pr-intro{display:grid;grid-template-columns:1fr 1fr;gap:100px;margin-bottom:80px;padding-bottom:64px;border-bottom:1px solid var(--rule)}
 .pr-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule)}
-.step{padding:52px 40px 52px 0;border-right:1px solid var(--rule);position:relative}
+.step{padding:64px 44px 64px 0;border-right:1px solid var(--rule);position:relative}
 .step:last-child{border-right:none;padding-right:0}
-.step-num{font-size:10px;letter-spacing:.2em;color:var(--dim);margin-bottom:20px;display:block}
-.step-line{width:24px;height:1px;background:var(--accent);margin-bottom:20px}
-.step-title{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:400;letter-spacing:.04em;margin-bottom:14px;color:var(--ink)}
-.step-desc{font-size:12px;color:var(--mid);line-height:2}
-.step-meta{font-size:10px;color:var(--dim);margin-top:14px;letter-spacing:.1em}
-@media(max-width:768px){.pr-intro{grid-template-columns:1fr;gap:20px}.pr-grid{grid-template-columns:1fr 1fr}.step{padding:32px 20px 32px 0;border-bottom:1px solid var(--rule)}}
+.step-num{font-family:'Marcellus',serif;font-size:11px;letter-spacing:.3em;color:var(--gold);margin-bottom:24px;display:block;text-transform:uppercase}
+.step-line{width:28px;height:1px;background:var(--gold);margin-bottom:24px}
+.step-title{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:400;letter-spacing:.08em;margin-bottom:18px;color:var(--ink)}
+.step-desc{font-family:'Noto Serif TC',serif;font-size:13px;color:var(--mid);line-height:2;font-weight:300;letter-spacing:.03em}
+.step-meta{font-family:'Marcellus',serif;font-size:10px;color:var(--dim);margin-top:16px;letter-spacing:.16em}
+@media(max-width:768px){.pr-intro{grid-template-columns:1fr;gap:24px;margin-bottom:48px}.pr-grid{grid-template-columns:1fr 1fr}.step{padding:40px 20px 40px 0;border-bottom:1px solid var(--rule)}}
 
 /* PHILOSOPHY */
 .phil-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule)}
-.phil{padding:52px 40px 52px 0;border-right:1px solid var(--rule)}
+.phil{padding:64px 48px 64px 0;border-right:1px solid var(--rule)}
 .phil:last-child{border-right:none}
-.phil-i{font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:var(--dim);margin-bottom:24px;display:block;letter-spacing:.05em}
-.phil-b{font-family:'Noto Serif TC',serif;font-size:15px;font-weight:300;line-height:2.1;color:var(--ink);margin-bottom:28px;letter-spacing:.04em}
-.phil-rule{width:24px;height:1px;background:var(--accent);margin-bottom:14px}
-.phil-t{font-size:13px;color:var(--ink);margin-bottom:4px;letter-spacing:.04em}
-.phil-r{font-size:10px;letter-spacing:.16em;color:var(--dim);font-family:'Cormorant Garamond',serif;font-style:italic}
-@media(max-width:768px){.phil-grid{grid-template-columns:1fr}.phil{border-right:none;border-bottom:1px solid var(--rule);padding:40px 0}}
+.phil-i{font-family:'Marcellus',serif;font-size:13px;color:var(--gold);margin-bottom:32px;display:block;letter-spacing:.1em}
+.phil-b{font-family:'Noto Serif TC',serif;font-size:16px;font-weight:300;line-height:2.1;color:var(--ink);margin-bottom:32px;letter-spacing:.05em}
+.phil-rule{width:28px;height:1px;background:var(--gold);margin-bottom:16px}
+.phil-t{font-family:'Noto Serif TC',serif;font-size:14px;color:var(--ink);margin-bottom:6px;letter-spacing:.06em;font-weight:400}
+.phil-r{font-family:'Marcellus',serif;font-size:11px;letter-spacing:.24em;color:var(--dim);text-transform:uppercase}
+@media(max-width:768px){.phil-grid{grid-template-columns:1fr}.phil{border-right:none;border-bottom:1px solid var(--rule);padding:48px 0}}
 
 /* FAQ */
-.faq-grid{border-top:1px solid var(--rule);margin-top:20px}
-.faq-item{border-bottom:1px solid var(--rule);padding:26px 0;cursor:pointer;transition:background .2s}
-.faq-q{display:flex;justify-content:space-between;align-items:center;gap:24px}
-.faq-qt{font-size:14px;color:var(--ink);letter-spacing:.03em;line-height:1.7;font-weight:400}
-.faq-qs{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--dim);transition:transform .3s;flex-shrink:0;font-weight:300}
-.faq-item.on .faq-qs{transform:rotate(45deg);color:var(--accent)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,margin-top .4s ease;font-size:13px;color:var(--mid);line-height:2.1}
-.faq-item.on .faq-a{max-height:500px;margin-top:18px}
+.faq-grid{border-top:1px solid var(--rule);margin-top:24px}
+.faq-item{border-bottom:1px solid var(--rule);padding:32px 0;cursor:pointer;transition:background .2s}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:32px}
+.faq-qt{font-family:'Noto Serif TC',serif;font-size:16px;color:var(--ink);letter-spacing:.04em;line-height:1.7;font-weight:400}
+.faq-qs{font-family:'Marcellus',serif;font-size:22px;color:var(--gold);transition:transform .3s;flex-shrink:0;font-weight:400}
+.faq-item.on .faq-qs{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,margin-top .4s ease;font-family:'Noto Serif TC',serif;font-size:14px;color:var(--mid);line-height:2.1;font-weight:300;letter-spacing:.03em}
+.faq-item.on .faq-a{max-height:500px;margin-top:20px}
 
 /* CONTACT */
 .ct-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule)}
-.ct-l{padding:72px 80px 72px 0;border-right:1px solid var(--rule)}
-.ct-r{padding:72px 0 72px 80px}
-.ct-h2{font-family:'Noto Serif TC',serif;font-size:clamp(32px,3.2vw,48px);font-weight:300;line-height:1.25;margin-bottom:22px;letter-spacing:.04em}
-.ct-h2 em{font-style:normal;color:var(--accent);font-family:'Cormorant Garamond',serif}
-.ct-sub{font-size:13px;line-height:2.2;color:var(--mid);max-width:360px;margin-bottom:48px}
+.ct-l{padding:80px 80px 80px 0;border-right:1px solid var(--rule)}
+.ct-r{padding:80px 0 80px 80px}
+.ct-h2{font-family:'Marcellus',serif;font-size:clamp(36px,3.6vw,56px);font-weight:400;line-height:1.15;margin-bottom:28px;letter-spacing:.01em;color:var(--ink)}
+.ct-h2 em{font-style:normal;color:var(--gold)}
+.ct-sub{font-family:'Noto Serif TC',serif;font-size:14px;line-height:2.1;color:var(--mid);max-width:380px;margin-bottom:56px;font-weight:300;letter-spacing:.03em}
 .ct-rows{display:flex;flex-direction:column}
-.ct-row-item{display:flex;gap:20px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--rule)}
+.ct-row-item{display:flex;gap:24px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--rule)}
 .ct-row-item:first-child{border-top:1px solid var(--rule)}
-.ct-lbl{font-size:10px;letter-spacing:.14em;color:var(--dim);min-width:54px;padding-top:3px}
-.ct-val{font-size:13px;color:var(--ink)}
+.ct-lbl{font-family:'Marcellus',serif;font-size:10px;letter-spacing:.24em;color:var(--gold);min-width:64px;padding-top:3px;text-transform:uppercase}
+.ct-val{font-family:'Noto Serif TC',serif;font-size:14px;color:var(--ink);font-weight:400;letter-spacing:.02em}
 .ct-val a{transition:color .2s}
-.ct-val a:hover{color:var(--accent)}
+.ct-val a:hover{color:var(--gold)}
 .form{display:flex;flex-direction:column;gap:0}
 .form-row{display:grid;grid-template-columns:1fr 1fr}
-.ff{position:relative;border:1px solid var(--rule);margin:-1px -1px 0 0;background:var(--bg);transition:border-color .2s}
+.ff{position:relative;border:1px solid var(--rule);margin:-1px -1px 0 0;background:var(--bg);transition:all .3s}
 .ff:focus-within{border-color:var(--ink);z-index:1}
-.ff label{position:absolute;top:14px;left:18px;font-size:10px;letter-spacing:.14em;color:var(--dim);pointer-events:none}
-.ff label .req{color:#c44;margin-left:2px}
-.ff input,.ff textarea,.ff select{width:100%;background:transparent;border:none;outline:none;font-family:'Noto Sans TC',sans-serif;font-size:13px;font-weight:300;color:var(--ink);padding:34px 18px 14px;appearance:none}
-.ff textarea{height:120px;resize:none}
-.fsub{margin-top:2px;background:var(--ink);color:var(--bg);border:none;padding:18px 44px;font-family:'Noto Sans TC',sans-serif;font-size:11px;font-weight:300;letter-spacing:.22em;cursor:pointer;transition:opacity .25s;align-self:flex-start}
-.fsub:hover{opacity:.65}
+.ff label{position:absolute;top:16px;left:20px;font-family:'Marcellus',serif;font-size:10px;letter-spacing:.22em;color:var(--dim);pointer-events:none;text-transform:uppercase}
+.ff label .req{color:#c44;margin-left:3px}
+.ff input,.ff textarea,.ff select{width:100%;background:transparent;border:none;outline:none;font-family:'Noto Serif TC',sans-serif;font-size:14px;font-weight:400;color:var(--ink);padding:36px 20px 16px;appearance:none;letter-spacing:.02em}
+.ff textarea{height:120px;resize:none;font-family:'Noto Serif TC',sans-serif}
+.fsub{margin-top:2px;background:var(--ink);color:var(--bg);border:none;padding:20px 48px;font-family:'Marcellus',serif;font-size:12px;font-weight:400;letter-spacing:.3em;cursor:pointer;transition:all .3s;align-self:flex-start;text-transform:uppercase}
+.fsub:hover{opacity:.75;transform:translateY(-1px)}
 .fsub:disabled{opacity:.4;cursor:not-allowed}
-.form-note{font-size:10px;color:var(--dim);margin-top:14px;line-height:1.8}
-@media(max-width:900px){.ct-grid{grid-template-columns:1fr}.ct-l{border-right:none;border-bottom:1px solid var(--rule);padding:0 0 48px}.ct-r{padding:48px 0 0}.form-row{grid-template-columns:1fr}}
+.form-note{font-family:'Noto Serif TC',serif;font-size:11px;color:var(--dim);margin-top:20px;line-height:1.8;letter-spacing:.03em}
+@media(max-width:900px){.ct-grid{grid-template-columns:1fr}.ct-l{border-right:none;border-bottom:1px solid var(--rule);padding:0 0 56px}.ct-r{padding:56px 0 0}.form-row{grid-template-columns:1fr}}
 
 /* FOOTER */
-footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--bg2)}
-.ft-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
-.ft-brand .ft-logo-img{height:44px;width:auto;display:block;margin-bottom:20px;opacity:.9}
-.ft-brand p{font-size:11px;color:var(--mid);line-height:2;max-width:300px}
-.ft-col h4{font-size:10px;letter-spacing:.18em;color:var(--ink);margin-bottom:20px;font-weight:400}
+footer{padding:72px 48px 36px;border-top:1px solid var(--rule);background:var(--bg)}
+.ft-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:56px;padding-bottom:48px;border-bottom:1px solid var(--rule)}
+.ft-brand .ft-logo-img{height:40px;width:auto;display:block;margin-bottom:24px;opacity:.85}
+.ft-brand p{font-family:'Noto Serif TC',serif;font-size:13px;color:var(--mid);line-height:2;max-width:320px;font-weight:300;letter-spacing:.03em}
+.ft-col h4{font-family:'Marcellus',serif;font-size:11px;letter-spacing:.28em;color:var(--gold);margin-bottom:24px;font-weight:400;text-transform:uppercase}
 .ft-col ul{list-style:none}
-.ft-col li{margin-bottom:10px}
-.ft-col a,.ft-col span{font-size:11px;color:var(--mid);letter-spacing:.04em;line-height:1.8;transition:color .2s}
+.ft-col li{margin-bottom:12px}
+.ft-col a,.ft-col span{font-size:12px;color:var(--mid);letter-spacing:.03em;line-height:1.8;transition:color .2s}
 .ft-col a:hover{color:var(--ink)}
 .ft-bottom{max-width:1200px;margin:32px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.ft-copy{font-size:10px;color:var(--dim);letter-spacing:.04em}
-.ft-keywords{font-size:10px;color:var(--dim);letter-spacing:.02em;line-height:1.8;max-width:700px}
-.ft-keywords a{color:var(--dim);transition:color .2s}
-.ft-keywords a:hover{color:var(--mid)}
-@media(max-width:900px){.ft-grid{grid-template-columns:1fr 1fr;gap:32px}}
-@media(max-width:600px){.ft-grid{grid-template-columns:1fr}footer{padding:48px 24px 24px}.ft-bottom{flex-direction:column;align-items:flex-start}}
+.ft-copy{font-family:'Marcellus',serif;font-size:10px;color:var(--dim);letter-spacing:.14em}
+.ft-seo-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(max-width:900px){.ft-grid{grid-template-columns:1fr 1fr;gap:40px}}
+@media(max-width:600px){.ft-grid{grid-template-columns:1fr}footer{padding:56px 24px 28px}.ft-bottom{flex-direction:column;align-items:flex-start}}
 
-/* FLOATING CTA（手機快捷） */
-.fab{position:fixed;bottom:20px;right:20px;z-index:800;display:none;gap:10px;flex-direction:column}
-.fab a{display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--ink);color:var(--bg);font-size:20px;box-shadow:0 4px 16px rgba(0,0,0,.15);transition:transform .2s}
-.fab a:hover{transform:scale(1.06)}
+/* FLOATING CTA */
+.fab{position:fixed;bottom:24px;right:24px;z-index:800;display:none;gap:12px;flex-direction:column}
+.fab a{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:var(--ink);color:var(--bg);font-size:20px;box-shadow:0 6px 20px rgba(0,0,0,.12);transition:all .3s}
+.fab a:hover{transform:scale(1.06);box-shadow:0 8px 24px rgba(0,0,0,.16)}
 .fab a.line{background:#06C755}
-.fab a.phone{background:var(--accent)}
+.fab a.phone{background:var(--gold)}
 @media(max-width:768px){.fab{display:flex}}
 
 /* LIGHTBOX */
-.lb{display:none;position:fixed;inset:0;z-index:9999;background:rgba(8,7,6,.96);align-items:center;justify-content:center}
+.lb{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.95);align-items:center;justify-content:center}
 .lb.open{display:flex}
 .lb-img{max-width:90vw;max-height:88vh;object-fit:contain}
-.lb-close{position:absolute;top:24px;right:32px;font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.4);background:none;border:none;cursor:pointer;transition:color .2s}
+.lb-close{position:absolute;top:28px;right:36px;font-family:'Marcellus',serif;font-size:11px;letter-spacing:.24em;color:rgba(255,255,255,.5);background:none;border:none;cursor:pointer;transition:color .2s;text-transform:uppercase}
 .lb-close:hover{color:#fff}
-.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.3);font-size:22px;cursor:pointer;padding:20px 24px;transition:color .2s}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.35);font-size:24px;cursor:pointer;padding:24px 28px;transition:color .2s}
 .lb-nav:hover{color:#fff}
 .lb-prev{left:8px}.lb-next{right:8px}
-.lb-info{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);text-align:center}
-.lb-cap{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.5)}
-.lb-cnt{font-size:10px;color:rgba(255,255,255,.3);margin-top:4px}
+.lb-info{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);text-align:center}
+.lb-cap{font-family:'Marcellus',serif;font-size:11px;letter-spacing:.24em;color:rgba(255,255,255,.55);text-transform:uppercase}
+.lb-cnt{font-family:'Marcellus',serif;font-size:10px;color:rgba(255,255,255,.3);margin-top:6px;letter-spacing:.2em}
 
 /* ANIMATIONS */
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
@@ -517,33 +517,25 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
     <img src="logo-dark.png" alt="圓淬空間美學 YUANTSUI" class="nav-logo-img">
   </a>
   <ul class="nav-links">
-    <li><a href="#about">關於我們</a></li>
-    <li><a href="#services">設計服務</a></li>
-    <li><a href="#portfolio">設計作品</a></li>
-    <li><a href="#area">服務區域</a></li>
-    <li><a href="#process">服務流程</a></li>
-    <li><a href="#faq">常見問答</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">免費諮詢</a>
+  <a href="#contact" class="nav-cta">Contact</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-text">
-    <p class="hero-eyebrow">室內設計 · 新竹．台中．彰化．雲林 · 2022 創立</p>
-    <h2 class="hero-h1">YUANTSUI<br><em>Design</em></h2>
+    <p class="hero-eyebrow">Interior Design Studio · Since 2022</p>
+    <h2 class="hero-h1">The Art of<br><em>Living Space</em></h2>
     <p class="hero-h1-tw">圓淬空間美學</p>
-    <p class="hero-sub">深耕中部的<strong style="color:var(--ink);font-weight:400">室內設計團隊</strong>，服務<strong style="color:var(--ink);font-weight:400">新竹、台中、彰化、雲林</strong>四縣市。住宅．商空．老屋翻新，用光與材質打造你真正想回去的空間。</p>
-    <div class="hero-tags">
-      <span class="hero-tag">新竹室內設計</span>
-      <span class="hero-tag">台中室內設計</span>
-      <span class="hero-tag">彰化室內設計</span>
-      <span class="hero-tag">雲林室內設計</span>
-      <span class="hero-tag">老屋翻新</span>
-    </div>
+    <p class="hero-sub">台中室內設計公司。住宅與商業空間，以內斂線條與材質層次，打造雋永生活場域。</p>
     <div class="hero-btns">
-      <a href="#portfolio" class="btn-p" data-ga="hero_view_portfolio">瀏覽設計作品</a>
-      <a href="#contact" class="btn-g" data-ga="hero_book_consult">預約免費諮詢 →</a>
+      <a href="#portfolio" class="btn-p" data-ga="hero_view_portfolio">Portfolio</a>
+      <a href="#contact" class="btn-g" data-ga="hero_book_consult">Contact →</a>
     </div>
   </div>
   <div class="hero-video-wrap">
@@ -563,37 +555,32 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
   </div>
 </section>
 
-<!-- TICKER -->
-<div class="ticker" aria-hidden="true"><div class="ticker-inner">
-  <span class="ticker-item">新竹室內設計</span><span class="ticker-item">台中室內設計</span><span class="ticker-item">彰化室內設計</span><span class="ticker-item">雲林室內設計</span><span class="ticker-item">住宅設計</span><span class="ticker-item">商業空間設計</span><span class="ticker-item">老屋翻新</span><span class="ticker-item">全室裝修</span><span class="ticker-item">燈光規劃</span><span class="ticker-item">家具軟裝</span><span class="ticker-item">工程監造</span><span class="ticker-item">深耕中部．服務四縣市</span>
-  <span class="ticker-item">新竹室內設計</span><span class="ticker-item">台中室內設計</span><span class="ticker-item">彰化室內設計</span><span class="ticker-item">雲林室內設計</span><span class="ticker-item">住宅設計</span><span class="ticker-item">商業空間設計</span><span class="ticker-item">老屋翻新</span><span class="ticker-item">全室裝修</span><span class="ticker-item">燈光規劃</span><span class="ticker-item">家具軟裝</span><span class="ticker-item">工程監造</span><span class="ticker-item">深耕中部．服務四縣市</span>
-</div></div>
+<!-- DIVIDER -->
+<div class="divider-row"></div>
 
 <!-- ABOUT -->
 <section class="section" id="about">
   <div class="inner">
     <div class="about-grid">
       <div class="rv">
-        <p class="sec-label">關於圓淬 · ABOUT</p>
-        <h2 class="about-h2">好的空間，<br>是陪你過日子的<em>那個人</em></h2>
-        <p class="body-t"><strong>圓淬空間美學</strong>是一間成立於 2022 年、深耕中部的<strong>室內設計公司</strong>。我們不相信「打造夢幻豪宅」這種口號，我們相信的是 — 你週末早上會想在哪個角落喝咖啡？孩子放學回來第一件事要做什麼？晚上洗完澡，哪盞燈會最溫柔地接住你？</p>
-        <br>
-        <p class="body-t">這些看似瑣碎的日常，才是我們規劃空間的起點。從<strong>新竹、台中、彰化、雲林</strong>的住宅設計、老屋翻新到商業空間，我們服務的坪數有大有小、預算有高有低，但對每一個家、每一間店的在意程度，從來沒變過。</p>
-        <div class="pillars">
-          <div class="pl"><div class="pl-n">01 以人為本</div><div class="pl-t">先懂你，再畫圖</div><div class="pl-d">初次見面我們不談設計，我們先聊你的生活習慣、家人的小毛病、養的那隻貓。</div></div>
-          <div class="pl"><div class="pl-n">02 材質與光</div><div class="pl-t">質感是摸出來的</div><div class="pl-d">每一種木皮、石材、布料我們都親手選過，因為空間的溫度藏在觸感裡。</div></div>
-          <div class="pl"><div class="pl-n">03 全程陪伴</div><div class="pl-t">從諮詢到入住</div><div class="pl-d">同一位設計師從丈量、提案、監工到軟裝陳設，不換人、不轉包。</div></div>
-          <div class="pl"><div class="pl-n">04 精準實現</div><div class="pl-t">圖上好看，住著也要</div><div class="pl-d">每週現場巡查、嚴格把關施工品質，確保三年、五年後依然耐看。</div></div>
-        </div>
+        <p class="sec-label">About — 關於圓淬</p>
+        <h2 class="about-h2">美，存在於<br><em>每一個細節</em></h2>
+        <p class="body-t">圓淬空間美學成立於 2022 年，專注於高端住宅與商業空間設計。深耕台中在地，融合東方美學與現代主義，為每位業主量身打造獨一無二的空間語言。</p>
       </div>
       <div class="rv d2 about-right">
-        <blockquote class="about-quote">「家，不是用來拍照的樣品屋，<br>是用來生活的。」<em>— 圓淬主理人</em></blockquote>
+        <blockquote class="about-quote">空間是無聲的語言，<br>訴說著一個人<br>選擇生活的方式。</blockquote>
         <div class="stats">
-          <div><div class="stat-n">10<span style="font-size:22px">+</span></div><div class="stat-l">年設計經驗</div></div>
-          <div><div class="stat-n">20<span style="font-size:22px">+</span></div><div class="stat-l">完成案例</div></div>
-          <div><div class="stat-n">100<span style="font-size:22px">%</span></div><div class="stat-l">業主推薦</div></div>
+          <div><div class="stat-n">10<span style="font-size:22px">+</span></div><div class="stat-l">Years Exp.</div></div>
+          <div><div class="stat-n">20<span style="font-size:22px">+</span></div><div class="stat-l">Projects</div></div>
+          <div><div class="stat-n">04</div><div class="stat-l">Categories</div></div>
         </div>
       </div>
+    </div>
+    <div class="pillars">
+      <div class="pl rv"><div class="pl-n">01</div><div class="pl-t">以人為本</div><div class="pl-d">深入了解業主的生活習慣，設計真正符合生活的空間。</div></div>
+      <div class="pl rv d1"><div class="pl-n">02</div><div class="pl-t">材質與光</div><div class="pl-d">精選建材，搭配專業燈光，創造空間的層次與溫度。</div></div>
+      <div class="pl rv d2"><div class="pl-n">03</div><div class="pl-t">全程陪伴</div><div class="pl-d">從初次諮詢到完工，每一環節都有專屬設計師跟進。</div></div>
+      <div class="pl rv d3"><div class="pl-n">04</div><div class="pl-t">精準實現</div><div class="pl-d">嚴格監工，確保每一細節精準呈現設計意圖。</div></div>
     </div>
   </div>
 </section>
@@ -602,44 +589,38 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
 <section class="section" id="services">
   <div class="inner">
     <div class="srv-head rv">
-      <div><p class="sec-label">設計服務 · SERVICES</p><h2 class="sec-h">從一張平面圖，<br>到你<em>想回去</em>的家</h2></div>
-      <p class="body-t" style="max-width:400px;padding-top:8px">我們提供從設計、監工到軟裝的一站式服務。無論是新成屋、中古屋翻新，或是你的第一間店，都有對應的專業團隊陪你走完整個流程。</p>
+      <div><p class="sec-label">Services — 設計服務</p><h2 class="sec-h">全方位<br><em>設計服務</em></h2></div>
+      <p class="body-t" style="max-width:400px;padding-top:16px">從概念到完工，提供端到端的設計服務，讓每個空間都成為獨一無二的藝術品。</p>
     </div>
     <div class="srv-list">
       <div class="srv-item rv">
         <div class="srv-num">01</div>
         <div class="srv-name">住宅設計<em>Residential</em></div>
-        <div class="srv-desc"><strong>全室裝修、局部改造、新成屋規劃</strong>都涵蓋。從 20 坪小宅到百坪豪邸，我們處理過各種格局挑戰。<strong>新竹竹北</strong>的華廈、<strong>台中北屯七期</strong>的大樓、<strong>彰化員林</strong>的透天、<strong>雲林斗六</strong>的自地自建都有實際案例。</div>
+        <div class="srv-desc">從輕裝修到全屋翻新，深入了解生活習慣，打造既美觀又實用的理想家園。</div>
         <div class="srv-arr">→</div>
       </div>
       <div class="srv-item rv d1">
         <div class="srv-num">02</div>
         <div class="srv-name">商業空間<em>Commercial</em></div>
-        <div class="srv-desc"><strong>餐廳、咖啡廳、辦公室、精品店、民宿</strong>設計。商空不只要好看，更要能營業、能收納、能讓員工好工作。我們同時考量動線、客流、品牌識別與未來延展。</div>
+        <div class="srv-desc">辦公室、餐廳、精品店等商業空間，結合品牌識別與使用者體驗，提升空間價值。</div>
         <div class="srv-arr">→</div>
       </div>
       <div class="srv-item rv d2">
         <div class="srv-num">03</div>
-        <div class="srv-name">老屋翻新<em>Renovation</em></div>
-        <div class="srv-desc"><strong>20 年以上中古屋、透天改造</strong>是我們的專長。從管線重拉、防水重做、結構補強、格局重塑到風格定調，處理過最老的是 42 年的老公寓。</div>
+        <div class="srv-name">燈光規劃<em>Lighting</em></div>
+        <div class="srv-desc">以自然採光與人工照明的精確搭配，創造不同時段的空間氛圍與層次感。</div>
         <div class="srv-arr">→</div>
       </div>
       <div class="srv-item rv">
         <div class="srv-num">04</div>
-        <div class="srv-name">燈光規劃<em>Lighting</em></div>
-        <div class="srv-desc">燈光是空間的隱形主角。<strong>主燈、氛圍光、工作燈、重點打光</strong>的層次搭配，讓同一個空間在早晨、傍晚、深夜，呈現三種不同的表情。</div>
+        <div class="srv-name">家具軟裝<em>Furnishing</em></div>
+        <div class="srv-desc">精選全球家具品牌，搭配布料、藝術品與裝飾擺件，為空間注入個性與溫度。</div>
         <div class="srv-arr">→</div>
       </div>
       <div class="srv-item rv d1">
         <div class="srv-num">05</div>
-        <div class="srv-name">家具軟裝<em>Styling</em></div>
-        <div class="srv-desc"><strong>沙發、窗簾、地毯、藝術品、綠植</strong>一條龍。我們有固定配合的進口家具通路與台灣在地工藝品牌，預算高低都有解決方案。</div>
-        <div class="srv-arr">→</div>
-      </div>
-      <div class="srv-item rv d2">
-        <div class="srv-num">06</div>
         <div class="srv-name">工程監造<em>Supervision</em></div>
-        <div class="srv-desc"><strong>每週定期現場巡檢、施工照片回報</strong>。我們不是畫完圖就消失的設計公司，從拆除到軟裝完成，每個階段都有設計師親自盯場。</div>
+        <div class="srv-desc">設計完成後持續跟進工程品質，確保每一細節都精準呈現設計意圖。</div>
         <div class="srv-arr">→</div>
       </div>
     </div>
@@ -651,9 +632,8 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
   <div class="inner">
     <div class="pf-head rv">
       <div>
-        <p class="sec-label">設計作品 · PORTFOLIO</p>
-        <h2 class="sec-h">每一個案子，<br>都是一段<em>生活提案</em></h2>
-        <p class="pf-intro">這裡收錄了圓淬近年完成的台中室內設計與中部地區作品。住宅、餐廳、旅店各不相同，但都有同一個起點：<strong>住在裡面的人</strong>。</p>
+        <p class="sec-label">Portfolio — 代表作品</p>
+        <h2 class="sec-h">代表<br><em>作品集</em></h2>
       </div>
       <a href="#contact" class="btn-g">洽詢合作 →</a>
     </div>
@@ -663,12 +643,11 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
   <div class="proj-block">
     <div class="proj-meta rv">
       <div>
-        <p style="font-size:10px;letter-spacing:.18em;color:var(--dim);margin-bottom:8px">Project 01 · 住宅設計</p>
-        <h3 class="proj-title">沐 Residence<em>Mu Residence</em></h3>
+        <p class="proj-num">— Project 01</p>
+        <h3 class="proj-title">沐<em>Mu Residence</em></h3>
       </div>
-      <p class="proj-detail">私人住宅<span>彰化</span><span>·</span><span>2022</span><br>38 坪 · 三房兩廳 · 新成屋</p>
+      <p class="proj-detail">Private Residence<br>Changhua · 2022</p>
     </div>
-    <p class="proj-story rv">一對剛成家的年輕夫妻，喜歡木質溫潤、也喜歡早晨的陽光。我們保留了客廳最開闊的採光面，把電視牆收成一整片<strong>山形木皮</strong>，讓光線能從窗邊一路流到餐桌。廚房跟客廳中間只隔一道細鐵件，煮飯時可以和沙發上的另一半聊天。</p>
     <div class="proj-imgs">
       <div class="prow tall" data-src="p01-01.jpg" data-cap="起居空間 — 沐 Residence 台中室內設計"><div class="pbg" style="background-image:url(p01-01.jpg);background-position:center 55%" role="img" aria-label="沐Residence台中住宅設計-木質溫潤起居空間與自然採光"></div><div class="pveil"></div><div class="pcap"><span class="pcat">起居空間 · Living</span><span class="pname">沐 Residence</span></div></div>
       <div class="prow wide" data-src="p01-02.jpg" data-cap="山形木皮電視主牆 — 沐 Residence"><div class="pbg" style="background-image:url(p01-02.jpg);background-position:center 50%" role="img" aria-label="山形木皮電視主牆-彰化住宅室內設計"></div><div class="pveil"></div><div class="pcap"><span class="pcat">電視主牆 · TV Wall</span><span class="pname">沐 Residence</span></div></div>
@@ -682,12 +661,11 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
   <div class="proj-block">
     <div class="proj-meta rv">
       <div>
-        <p style="font-size:10px;letter-spacing:.18em;color:var(--dim);margin-bottom:8px">Project 02 · 商業空間</p>
-        <h3 class="proj-title">永安 Boutique<em>Yongan Hotel</em></h3>
+        <p class="proj-num">— Project 02</p>
+        <h3 class="proj-title">永安<em>Yongan Hotel</em></h3>
       </div>
-      <p class="proj-detail">精品旅店<span>雲林</span><span>·</span><span>2023</span><br>12 間客房 · 石材與木質</p>
+      <p class="proj-detail">Boutique Hotel<br>Yunlin · 2023</p>
     </div>
-    <p class="proj-story rv">雲林小鎮上一間二代接手的老旅店，業主希望保留「讓旅人安心睡一晚」的初衷，但視覺上要跟得上時代。我們用<strong>米白石紋、淺色木作、間接照明</strong>重新定義每間客房，讓疲憊的旅人一推門就能放鬆肩膀。</p>
     <div class="proj-imgs">
       <div class="prow wide" data-src="p02-01.jpg" data-cap="雙床客房 — 永安 Boutique 雲林旅店設計"><div class="pbg" style="background-image:url(p02-01.jpg);background-position:center 45%" role="img" aria-label="雙床客房-雲林精品旅店商業空間設計"></div><div class="pveil"></div><div class="pcap"><span class="pcat">雙床客房 · Twin Room</span><span class="pname">永安 Boutique</span></div></div>
       <div class="prow tall" data-src="p02-02.jpg" data-cap="米白石紋衛浴 — 永安 Boutique"><div class="pbg" style="background-image:url(p02-02.jpg);background-position:center 40%" role="img" aria-label="米白石紋衛浴設計-旅店商空設計"></div><div class="pveil"></div><div class="pcap"><span class="pcat">衛浴石紋 · Bathroom</span><span class="pname">永安 Boutique</span></div></div>
@@ -701,12 +679,11 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
   <div class="proj-block">
     <div class="proj-meta rv">
       <div>
-        <p style="font-size:10px;letter-spacing:.18em;color:var(--dim);margin-bottom:8px">Project 03 · 住宅設計</p>
-        <h3 class="proj-title">山嵐 Residence<em>Shanlan Residence</em></h3>
+        <p class="proj-num">— Project 03</p>
+        <h3 class="proj-title">山嵐<em>Shanlan Residence</em></h3>
       </div>
-      <p class="proj-detail">私人住宅<span>彰化</span><span>·</span><span>2024</span><br>45 坪 · 三代同堂 · 中古屋翻新</p>
+      <p class="proj-detail">Private Residence<br>Changhua · 2024</p>
     </div>
-    <p class="proj-story rv">三代同堂的難題是「每個人都需要自己的角落」。我們用<strong>玻璃格柵、半高櫃體、孩子閣樓</strong>區隔空間卻不阻絕光線，爺爺的書房看得見孫子在玩，媽媽的書房又能獨立安靜。這是一個關於距離感的設計練習。</p>
     <div class="proj-imgs">
       <div class="prow wide" data-src="p03-01.jpg" data-cap="起居空間 — 山嵐 Residence 彰化老屋翻新"><div class="pbg" style="background-image:url(p03-01.jpg);background-position:center 55%" role="img" aria-label="起居空間-彰化老屋翻新三代同堂住宅設計"></div><div class="pveil"></div><div class="pcap"><span class="pcat">起居空間 · Living</span><span class="pname">山嵐 Residence</span></div></div>
       <div class="prow wide" data-src="p03-02.jpg" data-cap="電視牆與採光 — 山嵐 Residence"><div class="pbg" style="background-image:url(p03-02.jpg);background-position:center 50%" role="img" aria-label="電視牆與自然採光-彰化住宅室內設計"></div><div class="pveil"></div><div class="pcap"><span class="pcat">電視牆 · TV Wall</span><span class="pname">山嵐 Residence</span></div></div>
@@ -720,12 +697,11 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
   <div class="proj-block">
     <div class="proj-meta rv">
       <div>
-        <p style="font-size:10px;letter-spacing:.18em;color:var(--dim);margin-bottom:8px">Project 04 · 住宅設計</p>
-        <h3 class="proj-title">光映 Residence<em>Guangying Residence</em></h3>
+        <p class="proj-num">— Project 04</p>
+        <h3 class="proj-title">光映<em>Guangying Residence</em></h3>
       </div>
-      <p class="proj-detail">私人住宅<span>台中</span><span>·</span><span>2024</span><br>32 坪 · 兩房一廳 · 新成屋</p>
+      <p class="proj-detail">Private Residence<br>Taichung · 2024</p>
     </div>
-    <p class="proj-story rv">一對夫妻退休後搬到台中，最重要的需求是「<strong>光要足夠</strong>」。我們打掉原本封閉的餐廚隔間，讓一整面落地窗的陽光能穿透到玄關。吊燈是從義大利訂來的，據說業主每天晚上開燈都會笑一下。</p>
     <div class="proj-imgs">
       <div class="prow wide" data-src="p04-01.jpg" data-cap="起居空間 — 光映 Residence 台中住宅設計"><div class="pbg" style="background-image:url(p04-01.jpg);background-position:center 55%" role="img" aria-label="起居空間-台中退休住宅室內設計"></div><div class="pveil"></div><div class="pcap"><span class="pcat">起居空間 · Living</span><span class="pname">光映 Residence</span></div></div>
       <div class="prow wide" data-src="p04-02.jpg" data-cap="客餐廚全景 — 光映 Residence"><div class="pbg" style="background-image:url(p04-02.jpg);background-position:center 55%" role="img" aria-label="客餐廚開放式全景-台中住宅設計案例"></div><div class="pveil"></div><div class="pcap"><span class="pcat">客餐廚全景 · Open Plan</span><span class="pname">光映 Residence</span></div></div>
@@ -739,12 +715,11 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
   <div class="proj-block">
     <div class="proj-meta rv">
       <div>
-        <p style="font-size:10px;letter-spacing:.18em;color:var(--dim);margin-bottom:8px">Project 05 · 商業空間</p>
-        <h3 class="proj-title">找晨 Find Morning<em>Find Morning Café</em></h3>
+        <p class="proj-num">— Project 05</p>
+        <h3 class="proj-title">找晨<em>Find Morning Café</em></h3>
       </div>
-      <p class="proj-detail">早午餐餐廳<span>台中</span><span>·</span><span>2025</span><br>28 坪 · 街邊店 · 全新開業</p>
+      <p class="proj-detail">Brunch Restaurant<br>Taichung · 2025</p>
     </div>
-    <p class="proj-story rv">店主是一位前建築師，想做「<strong>一間讓人清晨願意出門的店</strong>」。外觀我們刻意壓低量體，讓它在清晨六點像剛睜開眼睛；入內則是一整面水泥吧台，搭配柔黃色的氣氛燈。這家店現在是台中早午餐圈的熱門打卡點。</p>
     <div class="proj-imgs">
       <div class="prow wide" data-src="p05-01.jpg" data-cap="店面外觀 — 找晨 Find Morning 台中餐飲設計"><div class="pbg" style="background-image:url(p05-01.jpg);background-position:center 40%" role="img" aria-label="店面外觀-台中找晨早午餐餐廳商業空間設計"></div><div class="pveil"></div><div class="pcap"><span class="pcat">店面外觀 · Facade</span><span class="pname">找晨 Find Morning</span></div></div>
       <div class="prow wide" data-src="p05-02.jpg" data-cap="水泥吧台大廳 — 找晨 Find Morning"><div class="pbg" style="background-image:url(p05-02.jpg);background-position:center 50%" role="img" aria-label="水泥吧台大廳-台中咖啡廳餐廳設計"></div><div class="pveil"></div><div class="pcap"><span class="pcat">吧台大廳 · Bar</span><span class="pname">找晨 Find Morning</span></div></div>
@@ -758,12 +733,11 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
   <div class="proj-block">
     <div class="proj-meta rv">
       <div>
-        <p style="font-size:10px;letter-spacing:.18em;color:var(--dim);margin-bottom:8px">Project 06 · 商業空間</p>
+        <p class="proj-num">— Project 06</p>
         <h3 class="proj-title">沐光居<em>Muguang House</em></h3>
       </div>
-      <p class="proj-detail">私人會所<span>雲林</span><span>·</span><span>2025</span><br>60 坪 · 多功能會所 · 新建案</p>
+      <p class="proj-detail">Private Clubhouse<br>Yunlin · 2025</p>
     </div>
-    <p class="proj-story rv">一位企業家想在家旁邊蓋一間「<strong>朋友來了可以住兩晚、平常也可以自己發呆</strong>」的會所。我們用中庭竹影、格柵陽光與天窗衛浴，把這間房子變成一個讓人想放下手機的地方。</p>
     <div class="proj-imgs">
       <div class="prow tall" data-src="p06-01.jpg" data-cap="竹影中庭 — 沐光居 雲林會所設計"><div class="pbg" style="background-image:url(p06-01.jpg);background-position:center 55%" role="img" aria-label="竹影中庭設計-雲林私人會所商業空間"></div><div class="pveil"></div><div class="pcap"><span class="pcat">竹影中庭 · Courtyard</span><span class="pname">沐光居</span></div></div>
       <div class="prow tall" data-src="p06-02.jpg" data-cap="廚房中島 — 沐光居"><div class="pbg" style="background-image:url(p06-02.jpg);background-position:center 55%" role="img" aria-label="廚房中島設計-雲林會所空間"></div><div class="pveil"></div><div class="pcap"><span class="pcat">廚房中島 · Kitchen</span><span class="pname">沐光居</span></div></div>
@@ -774,86 +748,18 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
   </div>
 </section>
 
-<!-- SERVICE AREA 服務區域（四縣市 SEO 專區）-->
-<section class="section" id="area">
-  <div class="inner">
-    <div class="srv-head rv" style="margin-bottom:40px">
-      <div><p class="sec-label">服務區域 · SERVICE AREA</p><h2 class="sec-h">深耕中部，<br><em>四縣市</em>全程到府</h2></div>
-      <p class="body-t" style="max-width:400px;padding-top:8px">我們把服務範圍集中在新竹、台中、彰化、雲林，不是因為我們能力有限，而是因為<strong>住得近，才能照顧得深</strong>。週週到場、即時回應、長期售後，每個縣市都有實際完成的案例。</p>
-    </div>
-    <div class="area-grid">
-      <div class="area-card rv">
-        <div class="area-head">
-          <span class="area-num">01</span>
-          <h3 class="area-title">新竹室內設計</h3>
-          <p class="area-en">Hsinchu</p>
-        </div>
-        <p class="area-desc">科技新貴的家，最需要的是「回到家能真的放鬆」。我們在<strong>竹北、東區、關埔重劃區</strong>的住宅案例，多半強調極簡線條、高效收納與影音娛樂空間，讓長時間加班的屋主一推門就能卸下疲勞。</p>
-        <ul class="area-spots">
-          <li>竹北新成屋全室設計</li>
-          <li>東區華廈老屋翻新</li>
-          <li>關埔豪宅住宅設計</li>
-          <li>新竹商辦與共享空間</li>
-        </ul>
-      </div>
-      <div class="area-card rv d1">
-        <div class="area-head">
-          <span class="area-num">02</span>
-          <h3 class="area-title">台中室內設計</h3>
-          <p class="area-en">Taichung</p>
-        </div>
-        <p class="area-desc">台中是我們的大本營，幾乎<strong>每週都有案子在進行</strong>。從西屯七期的豪宅、北屯單元二的新成屋、南屯的透天、西區的老宅改造，到各式咖啡廳與選物店，我們對台中的建商、建材、工班都熟悉。</p>
-        <ul class="area-spots">
-          <li>七期豪宅室內設計</li>
-          <li>北屯新成屋全室規劃</li>
-          <li>南屯透天老屋翻新</li>
-          <li>台中餐飲商空設計</li>
-        </ul>
-      </div>
-      <div class="area-card rv d2">
-        <div class="area-head">
-          <span class="area-num">03</span>
-          <h3 class="area-title">彰化室內設計</h3>
-          <p class="area-en">Changhua</p>
-        </div>
-        <p class="area-desc">彰化的案子多是「為家族打造一個傳承空間」。在<strong>員林、彰化市、鹿港</strong>我們處理過三代同堂的透天、親族合住的宅邸，重點在於動線分配與獨立性，讓每個世代都有自己的角落。</p>
-        <ul class="area-spots">
-          <li>員林透天住宅設計</li>
-          <li>彰化市三代同堂規劃</li>
-          <li>鹿港老屋翻新改造</li>
-          <li>彰化商業空間設計</li>
-        </ul>
-      </div>
-      <div class="area-card rv d3">
-        <div class="area-head">
-          <span class="area-num">04</span>
-          <h3 class="area-title">雲林室內設計</h3>
-          <p class="area-en">Yunlin</p>
-        </div>
-        <p class="area-desc">雲林的業主往往有更大的腹地與更慢的節奏。<strong>斗六、虎尾、西螺</strong>的案子多是自地自建、農舍改造或精品民宿，我們喜歡把在地素材（木、石、磚）融進現代線條，讓空間有地方感也有質感。</p>
-        <ul class="area-spots">
-          <li>斗六自地自建住宅</li>
-          <li>虎尾精品旅店設計</li>
-          <li>西螺老宅改造</li>
-          <li>雲林農舍與會所規劃</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- PROCESS -->
 <section class="section" id="process">
   <div class="inner">
     <div class="pr-intro rv">
-      <div><p class="sec-label">服務流程 · PROCESS</p><h2 class="sec-h">從第一次見面，<br>到<em>你搬進去</em>的那天</h2></div>
-      <p class="body-t" style="padding-top:8px;max-width:400px">很多人問我們流程要多久。老實說 — 住宅設計通常 6 到 10 個月，商空視規模 3 到 8 個月。但無論多久，你都不會覺得自己一個人在面對。</p>
+      <div><p class="sec-label">Process — 設計流程</p><h2 class="sec-h">從初見<br><em>到完美</em></h2></div>
+      <p class="body-t" style="padding-top:16px;max-width:400px">每一個完美空間的背後，都是一段精心規劃的旅程。四個階段，確保夢想空間如實完工。</p>
     </div>
     <div class="pr-grid">
-      <div class="step rv"><span class="step-num">Step 01</span><div class="step-line"></div><h3 class="step-title">初次諮詢</h3><p class="step-desc">我們會先聊你的生活、你的家人、你想要什麼、你不想要什麼。沒有樣品屋照片、沒有制式問卷。</p><p class="step-meta">約 1.5 小時｜免費</p></div>
-      <div class="step rv d1"><span class="step-num">Step 02</span><div class="step-line"></div><h3 class="step-title">概念提案</h3><p class="step-desc">2–3 週後，我們會提出空間配置、風格方向與預算初估，一起討論、調整，直到你點頭為止。</p><p class="step-meta">約 2–3 週</p></div>
-      <div class="step rv d2"><span class="step-num">Step 03</span><div class="step-line"></div><h3 class="step-title">細部設計</h3><p class="step-desc">3D 實景渲染、材質樣板、燈光模擬、施工圖面全部到位。你看到的 3D，就是完工後的樣子。</p><p class="step-meta">約 4–6 週</p></div>
-      <div class="step rv d3"><span class="step-num">Step 04</span><div class="step-line"></div><h3 class="step-title">施工完成</h3><p class="step-desc">從拆除到軟裝進場，每週現場巡查、每週進度報告。交屋那天，我們會陪你走一遍每個角落。</p><p class="step-meta">約 4–6 個月</p></div>
+      <div class="step rv"><span class="step-num">Step 01</span><div class="step-line"></div><h3 class="step-title">初次諮詢</h3><p class="step-desc">深入了解您的需求、生活習慣與美學偏好，建立設計方向共識。</p></div>
+      <div class="step rv d1"><span class="step-num">Step 02</span><div class="step-line"></div><h3 class="step-title">概念提案</h3><p class="step-desc">提出整體設計概念、空間配置方案與風格參考，確認設計大方向。</p></div>
+      <div class="step rv d2"><span class="step-num">Step 03</span><div class="step-line"></div><h3 class="step-title">細部設計</h3><p class="step-desc">完整 3D 渲染圖、材料選樣、燈光計畫與詳細施工圖說一次到位。</p></div>
+      <div class="step rv d3"><span class="step-num">Step 04</span><div class="step-line"></div><h3 class="step-title">施工完成</h3><p class="step-desc">全程監工把關，軟裝佈置到位，交付您夢想中的完美空間。</p></div>
     </div>
   </div>
 </section>
@@ -861,11 +767,11 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
 <!-- PHILOSOPHY -->
 <section class="section">
   <div class="inner">
-    <p class="sec-label" style="margin-bottom:48px">設計理念 · PHILOSOPHY</p>
+    <p class="sec-label" style="margin-bottom:56px">Philosophy — 設計理念</p>
     <div class="phil-grid">
-      <div class="phil rv"><span class="phil-i">I</span><p class="phil-b">空間不是打卡景點，<br>是你每天醒來的那張床、下班回來脫下的那雙鞋、深夜讀書的那盞燈。</p><div class="phil-rule"></div><div class="phil-t">空間是生活，不是風格</div><div class="phil-r">Space is Life, Not Style</div></div>
-      <div class="phil rv d1"><span class="phil-i">II</span><p class="phil-b">我們不追流行。<br>因為住進去的是你，不是 Pinterest。十年後依然耐看，才是我們的標準。</p><div class="phil-rule"></div><div class="phil-t">耐看勝過漂亮</div><div class="phil-r">Timeless over Trendy</div></div>
-      <div class="phil rv d2"><span class="phil-i">III</span><p class="phil-b">細節不是奢華，<br>是誠實。一道木皮的對紋、一個插座的位置、一片踢腳板的收邊，那是我們和時間的對話。</p><div class="phil-rule"></div><div class="phil-t">細節就是誠實</div><div class="phil-r">Detail is Honesty</div></div>
+      <div class="phil rv"><span class="phil-i">I</span><p class="phil-b">空間不只是居住的容器，而是生活態度的延伸。每一個材質的選擇、每一道光線的落點，都在無聲地訴說居住者對生活的想像。</p><div class="phil-rule"></div><div class="phil-t">空間即語言</div><div class="phil-r">Space as Language</div></div>
+      <div class="phil rv d1"><span class="phil-i">II</span><p class="phil-b">我們不追逐流行風格，而是深入理解每位業主獨特的生活節奏與美學偏好，讓空間在十年後依然感覺恰如其分，歷久而彌新。</p><div class="phil-rule"></div><div class="phil-t">恆久而非流行</div><div class="phil-r">Timeless over Trendy</div></div>
+      <div class="phil rv d2"><span class="phil-i">III</span><p class="phil-b">細節是奢華的真正所在。不是昂貴的建材，而是每個轉角的比例、每道縫隙的精準，以及那些只有住在其中才能發現的用心。</p><div class="phil-rule"></div><div class="phil-t">細節定義品質</div><div class="phil-r">Detail Defines Quality</div></div>
     </div>
   </div>
 </section>
@@ -874,18 +780,17 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
 <section class="section" id="faq">
   <div class="inner">
     <div class="srv-head rv" style="margin-bottom:40px">
-      <div><p class="sec-label">常見問答 · FAQ</p><h2 class="sec-h">在你<em>預約之前</em>，<br>先看看這些</h2></div>
-      <p class="body-t" style="max-width:380px;padding-top:8px">這些是我們最常被問到的問題。如果你的疑惑不在上面，也歡迎直接打電話或用 LINE 問我們。</p>
+      <div><p class="sec-label">FAQ — 常見問答</p><h2 class="sec-h">在您預約之前<br><em>常見問題</em></h2></div>
+      <p class="body-t" style="max-width:380px;padding-top:16px">這些是我們最常被問到的問題。如有其他疑問，歡迎來電或 LINE 洽詢。</p>
     </div>
     <div class="faq-grid rv">
-      <div class="faq-item"><div class="faq-q"><span class="faq-qt">圓淬空間美學的服務範圍涵蓋哪些地區？</span><span class="faq-qs">+</span></div><div class="faq-a">我們以<strong>台中</strong>為主要服務據點，同時服務<strong>彰化、南投、雲林</strong>及大台北地區。全台皆可配合到府丈量與現場勘查，跨縣市案件交通食宿由我們自理。</div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-qt">台中室內設計費用大約多少？</span><span class="faq-qs">+</span></div><div class="faq-a">設計費依坪數、格局複雜度與需求而異。一般<strong>住宅設計費約每坪 6,000 至 12,000 元</strong>，商業空間則另行評估。初次諮詢完全免費，我們會在了解你的需求後提供具體報價建議，讓你對預算配置有清楚輪廓。</div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-qt">從設計到完工大約需要多久時間？</span><span class="faq-qs">+</span></div><div class="faq-a">住宅設計平均需 <strong>6 至 10 個月</strong>（含設計 2–3 個月、施工 4–6 個月）；商業空間因規模差異大，小型店面約 3–4 個月，大型商空可能拉長到 8 個月。詳細時程會在初次諮詢時為你規劃。</div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-qt">初次諮詢需要準備什麼？</span><span class="faq-qs">+</span></div><div class="faq-a">建議準備：<strong>建物平面圖（有的話）、預算範圍、喜歡的風格參考圖、家庭成員組成與生活習慣描述</strong>。沒有平面圖也沒關係，我們會協助你從建案資料或現場丈量開始。</div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-qt">有提供老屋翻新服務嗎？</span><span class="faq-qs">+</span></div><div class="faq-a">是的，<strong>老屋翻新是我們的專長之一</strong>。包含格局調整、水電管線更新、防水處理、結構補強與全面美學重塑。處理過最老的案例是 42 年的老公寓，從漏水壁癌到主臥夕陽無敵，全部重生。</div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-qt">設計師會換人嗎？整個案子誰在負責？</span><span class="faq-qs">+</span></div><div class="faq-a">不會。<strong>從初次諮詢到交屋後保固，都是同一位主案設計師跟到底</strong>。我們不採用「業務帶客、設計師接手、監工再轉手」的分段制。你認識誰，就是誰陪你走完全程。</div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-qt">完工後有保固嗎？</span><span class="faq-qs">+</span></div><div class="faq-a">有。<strong>結構與水電提供 2 年保固，木作 1 年、油漆 6 個月</strong>。保固期內的非人為損壞，我們免費回場處理。保固期後也可隨時回報，我們會協助評估修繕方案。</div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-qt">如何預約免費初次諮詢？</span><span class="faq-qs">+</span></div><div class="faq-a">三種方式：<strong>① 網站下方表單</strong>（24 小時內回覆）<strong>② LINE 官方帳號 @977hxkcy</strong>（上班時間即時回覆）<strong>③ 電話 0986-730-016</strong>。諮詢時間為週一至週六 10:00–18:00。</div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qt">圓淬空間美學的服務範圍？</span><span class="faq-qs">+</span></div><div class="faq-a">以<strong>台中</strong>為主要服務據點，鄰近縣市皆可配合到府丈量與現場勘查。跨縣市案件交通食宿由我們自理。</div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qt">室內設計費用大約多少？</span><span class="faq-qs">+</span></div><div class="faq-a">設計費依坪數、格局複雜度與需求而異，一般住宅設計費約為每坪 6,000 至 12,000 元，商業空間則另行評估。初次諮詢完全免費。</div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qt">從設計到完工大約需要多久？</span><span class="faq-qs">+</span></div><div class="faq-a">住宅設計平均需 <strong>6 至 10 個月</strong>（含設計 2–3 個月、施工 4–6 個月）；商業空間因規模差異大，約 3–8 個月不等。</div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qt">初次諮詢需要準備什麼？</span><span class="faq-qs">+</span></div><div class="faq-a">建議準備：建物平面圖、預算範圍、喜歡的風格參考圖、家庭成員組成與生活習慣描述。沒有平面圖也沒關係，我們會協助您從頭整理需求。</div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qt">設計師會換人嗎？</span><span class="faq-qs">+</span></div><div class="faq-a">不會。<strong>從初次諮詢到交屋後保固，都是同一位主案設計師跟到底</strong>。您認識誰，就是誰陪您走完全程。</div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qt">完工後有保固嗎？</span><span class="faq-qs">+</span></div><div class="faq-a">有。<strong>結構與水電提供 2 年保固，木作 1 年、油漆 6 個月</strong>。保固期內的非人為損壞，免費回場處理。</div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qt">如何預約免費諮詢？</span><span class="faq-qs">+</span></div><div class="faq-a">三種方式：<strong>① 網站表單</strong>（24 小時內回覆）<strong>② LINE @977hxkcy</strong>（即時回覆）<strong>③ 電話 0986-730-016</strong>。</div></div>
     </div>
   </div>
 </section>
@@ -895,16 +800,15 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
   <div class="inner">
     <div class="ct-grid">
       <div class="ct-l rv">
-        <p class="sec-label" style="margin-bottom:20px">聯繫我們 · CONTACT</p>
-        <h2 class="ct-h2">開始你的<br><em>生活空間</em></h2>
-        <p class="ct-sub">每一個讓人驚艷的空間，都是從一次真誠的對話開始。告訴我們你的想法、你的困擾、你心裡那個模糊的想像 — 我們會陪你一起把它變清楚。<strong style="color:var(--ink);font-weight:400">初次諮詢完全免費，不收取任何費用。</strong></p>
+        <p class="sec-label" style="margin-bottom:24px">Contact — 聯繫我們</p>
+        <h2 class="ct-h2">開始您的<br><em>夢想空間</em></h2>
+        <p class="ct-sub">每個偉大的空間都從一次對話開始。告訴我們您的想法，讓我們一起探索屬於您的空間可能性。<strong style="color:var(--ink);font-weight:400">初次諮詢完全免費。</strong></p>
         <div class="ct-rows">
-          <div class="ct-row-item"><span class="ct-lbl">地址</span><span class="ct-val"><a href="https://maps.google.com/?q=台中市西區台灣大道二段375號12F" target="_blank" rel="noopener">台中市西區台灣大道二段 375 號 12F</a></span></div>
-          <div class="ct-row-item"><span class="ct-lbl">電話</span><span class="ct-val"><a href="tel:+886986730016" data-ga="click_phone">0986-730-016</a></span></div>
-          <div class="ct-row-item"><span class="ct-lbl">信箱</span><span class="ct-val"><a href="mailto:yuantsui.design@gmail.com" data-ga="click_email">yuantsui.design@gmail.com</a></span></div>
-          <div class="ct-row-item"><span class="ct-lbl">LINE</span><span class="ct-val"><a href="https://line.me/ti/p/@977hxkcy" target="_blank" rel="noopener" data-ga="click_line">@977hxkcy（點擊加好友）</a></span></div>
-          <div class="ct-row-item"><span class="ct-lbl">時間</span><span class="ct-val">週一至週六 10:00 – 18:00（週日公休）</span></div>
-          <div class="ct-row-item"><span class="ct-lbl">服務</span><span class="ct-val">台中．彰化．南投．雲林．全台皆可</span></div>
+          <div class="ct-row-item"><span class="ct-lbl">Address</span><span class="ct-val"><a href="https://maps.google.com/?q=台中市西區台灣大道二段375號12F" target="_blank" rel="noopener">台中市西區台灣大道二段 375 號 12F</a></span></div>
+          <div class="ct-row-item"><span class="ct-lbl">Phone</span><span class="ct-val"><a href="tel:+886986730016" data-ga="click_phone">0986-730-016</a></span></div>
+          <div class="ct-row-item"><span class="ct-lbl">Email</span><span class="ct-val"><a href="mailto:yuantsui.fe@gmail.com" data-ga="click_email">yuantsui.fe@gmail.com</a></span></div>
+          <div class="ct-row-item"><span class="ct-lbl">LINE</span><span class="ct-val"><a href="https://line.me/ti/p/@977hxkcy" target="_blank" rel="noopener" data-ga="click_line">@977hxkcy</a></span></div>
+          <div class="ct-row-item"><span class="ct-lbl">Hours</span><span class="ct-val">週一至週六 10:00 – 18:00</span></div>
         </div>
       </div>
       <div class="ct-r rv d2">
@@ -970,33 +874,32 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
           </div>
           <div class="ff"><label for="f-msg">需求說明</label><textarea id="f-msg" name="需求說明" placeholder="可簡述屋齡、家庭成員、期待風格、特別需求等"></textarea></div>
           <button class="fsub" type="submit" data-ga="submit_contact">送出諮詢 →</button>
-          <p class="form-note">送出後 24 小時內將由專人與您聯繫。您的資料僅用於本次諮詢，我們不會對外提供。表單將同時記錄您的到站來源，協助我們更了解如何服務您。</p>
+          <p class="form-note">送出後 24 小時內將由專人與您聯繫。您的資料僅用於本次諮詢。</p>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER（含 SEO 關鍵字矩陣）-->
+<!-- FOOTER -->
 <footer>
   <div class="ft-grid">
     <div class="ft-brand">
       <img src="logo-dark.png" alt="圓淬空間美學 YUANTSUI" class="ft-logo-img">
-      <p>深耕中部的室內設計公司，專精住宅設計、商業空間、老屋翻新、燈光規劃與家具軟裝。以人為本，用光與材質打造你真正想回去的空間。</p>
+      <p>台中室內設計公司。以內斂線條、材質層次與光影節奏，打造雋永生活場域。</p>
     </div>
     <div class="ft-col">
-      <h4>設計服務</h4>
+      <h4>Services</h4>
       <ul>
-        <li><a href="#services">住宅室內設計</a></li>
-        <li><a href="#services">商業空間設計</a></li>
-        <li><a href="#services">老屋翻新改造</a></li>
+        <li><a href="#services">住宅設計</a></li>
+        <li><a href="#services">商業空間</a></li>
         <li><a href="#services">燈光規劃</a></li>
-        <li><a href="#services">家具軟裝陳設</a></li>
+        <li><a href="#services">家具軟裝</a></li>
         <li><a href="#services">工程監造</a></li>
       </ul>
     </div>
     <div class="ft-col">
-      <h4>關於我們</h4>
+      <h4>About</h4>
       <ul>
         <li><a href="#about">關於圓淬</a></li>
         <li><a href="#portfolio">設計作品</a></li>
@@ -1006,19 +909,20 @@ footer{padding:56px 48px 32px;border-top:1px solid var(--rule);background:var(--
       </ul>
     </div>
     <div class="ft-col">
-      <h4>聯絡資訊</h4>
+      <h4>Contact</h4>
       <ul>
         <li><span>台中市西區台灣大道二段 375 號 12F</span></li>
         <li><a href="tel:+886986730016">0986-730-016</a></li>
-        <li><a href="mailto:yuantsui.design@gmail.com">yuantsui.design@gmail.com</a></li>
+        <li><a href="mailto:yuantsui.fe@gmail.com">yuantsui.fe@gmail.com</a></li>
         <li><a href="https://line.me/ti/p/@977hxkcy" target="_blank" rel="noopener">LINE：@977hxkcy</a></li>
         <li><span>週一至週六 10:00–18:00</span></li>
       </ul>
     </div>
   </div>
   <div class="ft-bottom">
-    <div class="ft-copy">© 2022–2025 圓淬空間美學 YUANTSUI Design. All rights reserved.</div>
-    <div class="ft-keywords">服務區域：台中室內設計｜彰化室內設計｜南投室內設計｜雲林室內設計｜台中裝潢推薦｜台中老屋翻新｜台中豪宅設計｜台中商業空間設計</div>
+    <div class="ft-copy">© 2022–2026 YUANTSUI Design. All rights reserved.</div>
+    <!-- SEO 隱藏關鍵字（畫面上看不到，Google 爬得到）-->
+    <div class="ft-seo-hidden" aria-hidden="true">台中室內設計｜台中室內設計公司｜台中設計公司｜新竹室內設計｜彰化室內設計｜雲林室內設計｜台中住宅設計｜台中商業空間設計｜台中豪宅設計</div>
   </div>
 </footer>
 
