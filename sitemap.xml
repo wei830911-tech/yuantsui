@@ -1,39 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- 首頁 -->
   <url>
     <loc>https://www.yuantsui.com/</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://www.yuantsui.com/og-image.jpg</image:loc>
-      <image:title>圓淬空間美學 — 新竹台中彰化雲林桃園室內設計</image:title>
-      <image:caption>中部地區室內設計推薦 — 圓淬空間美學 YUANTSUI</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.yuantsui.com/p07-01.jpg</image:loc>
-      <image:title>朗居 Lang House — 彰化豪宅設計</image:title>
-      <image:caption>灰色大理石電視牆客廳 — 朗居彰化住宅室內設計</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.yuantsui.com/p08-01.jpg</image:loc>
-      <image:title>潤 Luna Residence — 台中室內設計</image:title>
-      <image:caption>奶茶色電視牆客廳 — 潤台中住宅極簡設計</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.yuantsui.com/p09-01.jpg</image:loc>
-      <image:title>泊 Haven Residence — 桃園小宅設計</image:title>
-      <image:caption>白色電視牆多功能客廳 — 泊桃園日式極簡住宅</image:caption>
-    </image:image>
   </url>
 
-  <url><loc>https://www.yuantsui.com/#about</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.yuantsui.com/#services</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.yuantsui.com/#portfolio</loc><lastmod>2026-04-24</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://www.yuantsui.com/#process</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.yuantsui.com/#faq</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.yuantsui.com/#contact</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <!-- 服務區域(新頁面) -->
+  <url>
+    <loc>https://www.yuantsui.com/service-areas.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 首頁錨點 -->
+  <url>
+    <loc>https://www.yuantsui.com/#about</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.yuantsui.com/#services</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.yuantsui.com/#portfolio</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.yuantsui.com/#process</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.yuantsui.com/#faq</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.yuantsui.com/#contact</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
 </urlset>
