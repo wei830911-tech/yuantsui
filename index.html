@@ -276,11 +276,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:cen
 .nav-logo{display:flex;align-items:center;height:100%}
 .nav-logo-img{height:38px;width:auto;display:block;transition:opacity .2s}
 .nav-logo:hover .nav-logo-img{opacity:.7}
-.nav-links{display:flex;gap:40px;list-style:none}
+.nav-links{display:flex;gap:clamp(18px,2.5vw,40px);list-style:none}
 .nav-links a{font-size:11px;letter-spacing:.15em;color:var(--mid);transition:color .2s}
 .nav-links a:hover{color:var(--ink)}
 .nav-cta{font-size:10px;letter-spacing:.18em;border-bottom:1px solid var(--ink);padding-bottom:1px;transition:opacity .2s}
 .nav-cta:hover{opacity:.45}
+.nav-actions{display:flex;align-items:center;gap:24px;flex-shrink:0}
+.nav-journal{font-family:'Noto Serif TC',serif;font-size:12px;letter-spacing:.12em;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;padding:7px 0;border-bottom:1px solid var(--rule);transition:border-color .2s,color .2s}
+.nav-journal:hover{border-color:var(--ink)}
+.nav-journal:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
+@media(max-width:900px){.nav-links{gap:18px}nav{padding:0 24px}}
+@media(max-width:480px){.nav-actions{gap:18px}.nav-journal{font-size:11px}.nav-cta{font-size:9px}}
+
 @media(max-width:768px){nav{padding:0 24px;height:60px}.nav-links{display:none}.nav-logo-img{height:30px}}
 
 /* HERO */
@@ -823,7 +830,10 @@ footer{padding:72px 48px 36px;border-top:1px solid var(--rule);background:var(--
     <li><a href="#process">Process</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Contact</a>
+  <div class="nav-actions">
+    <a href="https://yuantsui-home.wei830911.workers.dev/" class="nav-journal" aria-label="登入圓淬專案，閱覽設計文件與工程紀錄">專案登入 <span aria-hidden="true">↗</span></a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -1801,6 +1811,7 @@ footer{padding:72px 48px 36px;border-top:1px solid var(--rule);background:var(--
         <li><a href="service-areas.html">服務區域</a></li>
         <li><a href="#faq">常見問答</a></li>
         <li><a href="#contact">聯絡我們</a></li>
+        <li><a href="https://yuantsui-home.wei830911.workers.dev/">專案登入 ↗</a></li>
       </ul>
     </div>
     <div class="ft-col">
